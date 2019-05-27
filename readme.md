@@ -16,18 +16,19 @@
 
 ## config server
 - add code to file <code>'~\xampp\apache\conf\extra\httpd-vhosts.conf'</code>   
-    <pre>
-        < VirtualHost hoadondientu.com>
-        	DocumentRoot "E:/caidat/xampp/htdocs/thue/public"
-        	ServerName hoadondientu.com
-        	ServerAlias hoadondientu.com
-            < Directory "E:/caidat/xampp/htdocs/thue/public">
+<pre>
+    <code>
+        < VirtualHost hoadondientu.com >
+            DocumentRoot "E:/caidat/xampp/htdocs/thue/public"
+            ServerName hoadondientu.com
+            ServerAlias hoadondientu.com
+            < Directory "E:/caidat/xampp/htdocs/thue/public" >
                 Order allow,deny
                 Allow from all
-            </ Directory>
-        </ VirtualHost>
-    </pre>
- 
+            </ Directory >
+        </ VirtualHost >
+    </code>
+</pre>
  - add code to file <code>'C:\Windows\System32\drivers\etc'</code>
     <pre>
         127.0.0.1 hoadondientu.com
