@@ -61,7 +61,7 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 - run <code>$ php artisan serve</code> at root application
 - access <code>http://localhost:8000/</code>
 
-## config server
+## Config server
 - add code to file <code>'~\xampp\apache\conf\extra\httpd-vhosts.conf'</code>   
 ```
     <VirtualHost hoadondientu.com>
@@ -79,4 +79,15 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
     127.0.0.1 hoadondientu.com
 ```
  - access <code>http://hoadondientu.com/</code>
+ ## Config database
+ - Change file <code>.env</code> 
+ ```
+ DB_CONNECTION=mysql
+ DB_HOST=127.0.0.1
+ DB_PORT=3306
+ DB_DATABASE=thueso
+ DB_USERNAME=root
+ DB_PASSWORD=
+ ```
+ - Access [hoadondientu.com/invoices](http://hoadondientu.com/invoices)
  

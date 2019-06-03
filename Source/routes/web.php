@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('layouts\pages\invoice_issued');
 });
+
+Route::get('/invoices','Controller@invoices');
