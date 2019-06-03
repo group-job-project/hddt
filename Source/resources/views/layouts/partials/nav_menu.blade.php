@@ -41,5 +41,8 @@
                 <a class="dropdown-item" href="#">Đại lý tạo tài khoản sử dụng cho khách </a>
             </div>
         </div>
+        @foreach ($menus as $menu)
+            <a class="nav-link" href="{{$menu->menu_link}}">{{$menu->menu_name}}</a>
+        @endforeach
     </nav>
 </div>
