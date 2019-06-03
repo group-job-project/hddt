@@ -89,5 +89,15 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
  DB_USERNAME=root
  DB_PASSWORD=
  ```
+ - Create proc GetAllInvoices()
+```
+DELIMITER //
+ CREATE PROCEDURE GetAllInvoices()
+   BEGIN
+   SELECT *  FROM invoices;
+   END //GetAllInvoicesGetAllInvoices
+ DELIMITER ;
+```
  - Access [hoadondientu.com/invoices](http://hoadondientu.com/invoices)
+ - Demo code at file <code>~/app/Http/Controllers/Controller</code>
  
