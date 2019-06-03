@@ -79,7 +79,7 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
     127.0.0.1 hoadondientu.com
 ```
  - access <code>http://hoadondientu.com/</code>
- ## Config database
+## Config database
  - Change file <code>.env</code> 
  ```
  DB_CONNECTION=mysql
@@ -100,4 +100,9 @@ DELIMITER //
 ```
  - Access [hoadondientu.com/invoices](http://hoadondientu.com/invoices)
  - Demo code at file <code>~/app/Http/Controllers/Controller</code>
+## View Composers
+
+- Demo code at file: 
+<code>~/app/Http/ViewComposers/NavMenuComposer.php</code>
+<code>~/app/Providers/ComposerServiceProvider.php</code>
  
