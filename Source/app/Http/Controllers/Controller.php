@@ -14,7 +14,8 @@ class Controller extends BaseController
 
     public function invoices()
     {
-        $invoices = DB::table('invoices')->get();
-        return view('layouts.pages.invoice_data', ['invoices' => $invoices]);
+        $invoices = DB::select('call GetAllInvoices()');
+        // return $invoices;
+        return view('layouts.pages.invoice_data', ['invoices' => json_encode($invoices)]);
     }
 }
