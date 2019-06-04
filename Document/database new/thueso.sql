@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 01, 2019 lúc 10:59 AM
--- Phiên bản máy phục vụ: 10.1.40-MariaDB
--- Phiên bản PHP: 7.1.29
+-- Host: 127.0.0.1
+-- Generation Time: Jun 04, 2019 at 03:22 AM
+-- Server version: 10.1.40-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `thueso`
+-- Database: `thueso`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `accounts`
+-- Table structure for table `accounts`
 --
 
 CREATE TABLE `accounts` (
@@ -42,7 +42,7 @@ CREATE TABLE `accounts` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `account_member`
+-- Table structure for table `account_member`
 --
 
 CREATE TABLE `account_member` (
@@ -61,7 +61,7 @@ CREATE TABLE `account_member` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `company_information`
+-- Table structure for table `company_information`
 --
 
 CREATE TABLE `company_information` (
@@ -87,7 +87,7 @@ CREATE TABLE `company_information` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `history_account`
+-- Table structure for table `history_account`
 --
 
 CREATE TABLE `history_account` (
@@ -103,7 +103,7 @@ CREATE TABLE `history_account` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `invoices`
+-- Table structure for table `invoices`
 --
 
 CREATE TABLE `invoices` (
@@ -134,7 +134,7 @@ CREATE TABLE `invoices` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `invoice_details`
+-- Table structure for table `invoice_details`
 --
 
 CREATE TABLE `invoice_details` (
@@ -153,7 +153,7 @@ CREATE TABLE `invoice_details` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `menu_navication`
+-- Table structure for table `menu_navication`
 --
 
 CREATE TABLE `menu_navication` (
@@ -174,7 +174,7 @@ CREATE TABLE `menu_navication` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `messages`
+-- Table structure for table `messages`
 --
 
 CREATE TABLE `messages` (
@@ -189,7 +189,7 @@ CREATE TABLE `messages` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `payment`
+-- Table structure for table `payment`
 --
 
 CREATE TABLE `payment` (
@@ -208,7 +208,7 @@ CREATE TABLE `payment` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `payment_history`
+-- Table structure for table `payment_history`
 --
 
 CREATE TABLE `payment_history` (
@@ -227,7 +227,7 @@ CREATE TABLE `payment_history` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -245,7 +245,7 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
@@ -262,7 +262,7 @@ CREATE TABLE `roles` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sub_menu_navigation`
+-- Table structure for table `sub_menu_navigation`
 --
 
 CREATE TABLE `sub_menu_navigation` (
@@ -284,7 +284,7 @@ CREATE TABLE `sub_menu_navigation` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `template_invoice`
+-- Table structure for table `template_invoice`
 --
 
 CREATE TABLE `template_invoice` (
@@ -303,174 +303,269 @@ CREATE TABLE `template_invoice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `accounts`
+-- Indexes for table `accounts`
 --
 ALTER TABLE `accounts`
-  ADD PRIMARY KEY (`acc_id`);
+  ADD PRIMARY KEY (`acc_id`),
+  ADD KEY `accounts_fk` (`role_id`);
 
 --
--- Chỉ mục cho bảng `account_member`
+-- Indexes for table `account_member`
 --
 ALTER TABLE `account_member`
-  ADD PRIMARY KEY (`acc_mem_id`);
+  ADD PRIMARY KEY (`acc_mem_id`),
+  ADD KEY `account_member_fk` (`acc_id`);
 
 --
--- Chỉ mục cho bảng `company_information`
+-- Indexes for table `company_information`
 --
 ALTER TABLE `company_information`
-  ADD PRIMARY KEY (`comp_id`);
+  ADD PRIMARY KEY (`comp_id`),
+  ADD KEY `company_information_fk` (`acc_id`);
 
 --
--- Chỉ mục cho bảng `history_account`
+-- Indexes for table `history_account`
 --
 ALTER TABLE `history_account`
-  ADD PRIMARY KEY (`his_id`);
+  ADD PRIMARY KEY (`his_id`),
+  ADD KEY `history_account_fk` (`acc_id`);
 
 --
--- Chỉ mục cho bảng `invoices`
+-- Indexes for table `invoices`
 --
 ALTER TABLE `invoices`
-  ADD PRIMARY KEY (`invoice_id`);
+  ADD PRIMARY KEY (`invoice_id`),
+  ADD KEY `invoices_fk` (`acc_id`);
 
 --
--- Chỉ mục cho bảng `invoice_details`
+-- Indexes for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
-  ADD PRIMARY KEY (`invoice_detail_id`);
+  ADD PRIMARY KEY (`invoice_detail_id`),
+  ADD KEY `invoice_details_fk` (`invoice_id`);
 
 --
--- Chỉ mục cho bảng `menu_navication`
+-- Indexes for table `menu_navication`
 --
 ALTER TABLE `menu_navication`
-  ADD PRIMARY KEY (`menu_id`);
+  ADD PRIMARY KEY (`menu_id`),
+  ADD KEY `menu_navication_fk` (`acc_id`);
 
 --
--- Chỉ mục cho bảng `messages`
+-- Indexes for table `messages`
 --
 ALTER TABLE `messages`
-  ADD PRIMARY KEY (`message_id`);
+  ADD PRIMARY KEY (`message_id`),
+  ADD KEY `messages_fk` (`acc_id`);
 
 --
--- Chỉ mục cho bảng `payment`
+-- Indexes for table `payment`
 --
 ALTER TABLE `payment`
-  ADD PRIMARY KEY (`payment_id`);
+  ADD PRIMARY KEY (`payment_id`),
+  ADD KEY `payment_fk` (`acc_id`);
 
 --
--- Chỉ mục cho bảng `payment_history`
+-- Indexes for table `payment_history`
 --
 ALTER TABLE `payment_history`
-  ADD PRIMARY KEY (`payment_his_id`);
+  ADD PRIMARY KEY (`payment_his_id`),
+  ADD KEY `payment_history_fk` (`payment_id`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`pro_id`);
+  ADD PRIMARY KEY (`pro_id`),
+  ADD KEY `products_fk` (`acc_id`);
 
 --
--- Chỉ mục cho bảng `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`role_id`);
 
 --
--- Chỉ mục cho bảng `sub_menu_navigation`
+-- Indexes for table `sub_menu_navigation`
 --
 ALTER TABLE `sub_menu_navigation`
-  ADD PRIMARY KEY (`sub_menu_id`);
+  ADD PRIMARY KEY (`sub_menu_id`),
+  ADD KEY `sub_menu_navigation_fk` (`menu_id`);
 
 --
--- Chỉ mục cho bảng `template_invoice`
+-- Indexes for table `template_invoice`
 --
 ALTER TABLE `template_invoice`
-  ADD PRIMARY KEY (`temp_id`);
+  ADD PRIMARY KEY (`temp_id`),
+  ADD KEY `template_invoice_fk` (`acc_id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `accounts`
+-- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
   MODIFY `acc_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `company_information`
+-- AUTO_INCREMENT for table `company_information`
 --
 ALTER TABLE `company_information`
   MODIFY `comp_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `history_account`
+-- AUTO_INCREMENT for table `history_account`
 --
 ALTER TABLE `history_account`
   MODIFY `his_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `invoices`
+-- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
   MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `invoice_details`
+-- AUTO_INCREMENT for table `invoice_details`
 --
 ALTER TABLE `invoice_details`
   MODIFY `invoice_detail_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `menu_navication`
+-- AUTO_INCREMENT for table `menu_navication`
 --
 ALTER TABLE `menu_navication`
   MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `messages`
+-- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `payment`
+-- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
   MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `payment_history`
+-- AUTO_INCREMENT for table `payment_history`
 --
 ALTER TABLE `payment_history`
   MODIFY `payment_his_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `roles`
+-- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `sub_menu_navigation`
+-- AUTO_INCREMENT for table `sub_menu_navigation`
 --
 ALTER TABLE `sub_menu_navigation`
   MODIFY `sub_menu_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `template_invoice`
+-- AUTO_INCREMENT for table `template_invoice`
 --
 ALTER TABLE `template_invoice`
   MODIFY `temp_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD CONSTRAINT `accounts_fk` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`);
+
+--
+-- Constraints for table `account_member`
+--
+ALTER TABLE `account_member`
+  ADD CONSTRAINT `account_member_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`);
+
+--
+-- Constraints for table `company_information`
+--
+ALTER TABLE `company_information`
+  ADD CONSTRAINT `company_information_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`);
+
+--
+-- Constraints for table `history_account`
+--
+ALTER TABLE `history_account`
+  ADD CONSTRAINT `history_account_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`);
+
+--
+-- Constraints for table `invoices`
+--
+ALTER TABLE `invoices`
+  ADD CONSTRAINT `invoices_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`);
+
+--
+-- Constraints for table `invoice_details`
+--
+ALTER TABLE `invoice_details`
+  ADD CONSTRAINT `invoice_details_fk` FOREIGN KEY (`invoice_id`) REFERENCES `invoices` (`invoice_id`);
+
+--
+-- Constraints for table `menu_navication`
+--
+ALTER TABLE `menu_navication`
+  ADD CONSTRAINT `menu_navication_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`);
+
+--
+-- Constraints for table `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `messages_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`);
+
+--
+-- Constraints for table `payment`
+--
+ALTER TABLE `payment`
+  ADD CONSTRAINT `payment_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`);
+
+--
+-- Constraints for table `payment_history`
+--
+ALTER TABLE `payment_history`
+  ADD CONSTRAINT `payment_history_fk` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`);
+
+--
+-- Constraints for table `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`);
+
+--
+-- Constraints for table `sub_menu_navigation`
+--
+ALTER TABLE `sub_menu_navigation`
+  ADD CONSTRAINT `sub_menu_navigation_fk` FOREIGN KEY (`menu_id`) REFERENCES `menu_navication` (`menu_id`);
+
+--
+-- Constraints for table `template_invoice`
+--
+ALTER TABLE `template_invoice`
+  ADD CONSTRAINT `template_invoice_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
