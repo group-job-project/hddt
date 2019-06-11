@@ -11,8 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts\pages\invoice_issued');
-});
 
-Route::get('/invoices','Controller@invoices');
+Auth::routes();
+
+Route::get('/dang-nhap', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/dang-nhap', 'Auth\LoginController@login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('layouts\pages\invoice_issued');
+    });
+    Route::get('/invoices','Controller@invoices');
+});
