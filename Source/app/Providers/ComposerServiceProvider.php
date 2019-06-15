@@ -17,11 +17,17 @@ class ComposerServiceProvider extends ServiceProvider
         $this->ComposerMenusTop();
     }
 
+    /**
+     * Composer Navigation
+     */
     public function ComposerMenus()
     {
         view()->composer('layouts.partials.nav_menu', 'App\Http\ViewComposers\NavigationComposer');
     }
 
+    /**
+     * Composer Navigation Top
+     */
     public function ComposerMenusTop()
     {
         view()->composer('layouts.partials.nav_header', 'App\Http\ViewComposers\NavigationTopComposer');
