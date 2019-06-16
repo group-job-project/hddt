@@ -1,8 +1,8 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `MENU_TOPs`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `MENU_TOP`(
 	IN `ACCOUNTID` INT,
 	IN `GROUPMENU` CHAR ( 2 ) CHARSET UTF8,
 	IN `MENUSTATUS` CHAR ( 2 ) CHARSET UTF8,
-	IN MENUID CHAR ( 100 ) CHARSET UTF8 
+	IN MENUID CHAR ( 100 ) CHARSET UTF8
 	)
     NO SQL
 BEGIN#load menu top join 2 table menu_navication and sub_menu_navigation
