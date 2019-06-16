@@ -37,15 +37,9 @@ class NavigationMenu
      * @param String $group_menu
      * @return array
      */
-    public function loadMenuHeader($account_id, $menu_status, $group_menu, $output)
+    public function loadMenuHeader()
     {
-//        $menus = DB::select('CALL MENU_TOP(?, ?, ?, ?)', array(
-//            $account_id,
-//            $menu_status,
-//            $group_menu,
-//            $output
-//        ));
-        $menus = DB::select('CALL MENU_TOPs()');
+        $menus = DB::select('CALL MENU_TOP()');
         return $menus;
     }
 }
