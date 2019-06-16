@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 
 class NavigationTopComposer
 {
+
     /**
      * Bind data to the view.
      *
@@ -15,7 +16,7 @@ class NavigationTopComposer
     public function compose(View $view)
     {
         $nav_menu = new NavigationMenu();
-        $menus = $nav_menu->loadMenuHeader();
+        $menus = $nav_menu->loadMenuHeader(100, "0", "0");
         $collections = new Collection();
         $collections->push($menus);
         $view->with('main', $collections[0]);

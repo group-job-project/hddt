@@ -1,4 +1,8 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `MENU_TOP`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `MENU_TOP`(
+IN acc_id INT,
+IN group_menu CHAR(1) CHARSET UTF8,
+IN menu_status CHAR(1) CHARSET UTF8
+)
 BEGIN
 	SELECT DISTINCT MENU.menu_id, MENU.alias, MENU.menu_link, MENU.menu_parameter, MENU.menu_tooltip,
 		MENU.icon,
@@ -6,6 +10,9 @@ BEGIN
 		IFNULL(SUB_MENU.sub_menu_tooltip, "") AS sub_menu_tooltip
 	FROM menu_navication MENU
 		LEFT JOIN sub_menu_navigation SUB_MENU ON SUB_MENU.menu_id = MENU.menu_id
-	WHERE MENU.group_menu = 0
+	WHERE 
+			MENU.acc_id = acc_id 
+	AND MENU.group_menu = group_menu
+	AND MENU.menu_status = menu_status
 	ORDER BY MENU.menu_id ASC, MENU.menu_sort ASC, SUB_MENU.sub_menu_sort ;
 END
