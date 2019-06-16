@@ -7,26 +7,8 @@
 	<div class="navbar-collapse offcanvas-collapse"
 		id="navbarsExampleDefault">
 		<ul class="navbar-nav mr-auto">
-{{--			@foreach($main[0] as $menus) @empty($menus->sub_menu)--}}
-{{--			<li class="nav-item"><a class="nav-link" href="#" title="Profile"><i--}}
-{{--					class="fas fa-info-circle"></i> {{$menus->alias}}</a></li>--}}
-{{--			@endempty @empty(!$menus->sub_menu)--}}
-{{--			<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"--}}
-{{--				href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"--}}
-{{--				aria-expanded="false">{{$menus->alias}}</a>--}}
-
-{{--				<div class="dropdown-menu" aria-labelledby="dropdown01">--}}
-{{--					@foreach($menus->sub_menu as $sub) <a class="dropdown-item"--}}
-{{--						href="#">{{$sub->sub_menu_name}}</a> @endforeach--}}
-{{--				</div></li> @endempty @endforeach--}}
-
-
-{{--			{{count($main[0])}}--}}
 			@isset($main)
 				@for ($i = 0; $i < count($main); $i++)
-{{--					{{ $main[$i]->sub_menu_name }}--}}
-{{--									check has sub_menu--}}
-
 					@if($main[$i]->sub_menu_name == "")
 						<li class="nav-item"><a class="nav-link" href="#" title="Profile"><i
 										class="fas fa-info-circle"></i> {{$main[$i]->alias}}</a></li>
