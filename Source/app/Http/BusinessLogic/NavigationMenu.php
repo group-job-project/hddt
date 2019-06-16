@@ -39,12 +39,13 @@ class NavigationMenu
      */
     public function loadMenuHeader($account_id, $menu_status, $group_menu, $output)
     {
-        $menus = DB::select('CALL MENU_TOP(?, ?, ?, ?)', array(
-            $account_id,
-            $menu_status,
-            $group_menu,
-            $output
-        ));
+//        $menus = DB::select('CALL MENU_TOP(?, ?, ?, ?)', array(
+//            $account_id,
+//            $menu_status,
+//            $group_menu,
+//            $output
+//        ));
+        $menus = DB::select('CALL MENU_TOPs()');
         return $menus;
     }
 }

@@ -17,13 +17,16 @@ class NavigationTopComposer
     public function compose(View $view)
     {
         $nav_menu = new NavigationMenu();
+//        $menus = $nav_menu->loadMenuHeader(100, "0", "0", - 1);
+//        $collections = new Collection();
+//        $collections->push($menus);
+//        foreach ($collections[0] as $collection) {
+//            $sub_menus = $nav_menu->loadMenuHeader(- 1, "-1", "-1", $collection->menu_id);
+//            $collection->sub_menu = $sub_menus;
+//        }
         $menus = $nav_menu->loadMenuHeader(100, "0", "0", - 1);
         $collections = new Collection();
         $collections->push($menus);
-        foreach ($collections[0] as $collection) {
-            $sub_menus = $nav_menu->loadMenuHeader(- 1, "-1", "-1", $collection->menu_id);
-            $collection->sub_menu = $sub_menus;
-        }
-        $view->with('main', $collections);
+        $view->with('main', $collections[0]);
     }
 }
