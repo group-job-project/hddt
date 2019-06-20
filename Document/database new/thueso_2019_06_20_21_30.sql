@@ -11,7 +11,7 @@
  Target Server Version : 100140
  File Encoding         : 65001
 
- Date: 20/06/2019 20:44:37
+ Date: 20/06/2019 21:32:28
 */
 
 SET NAMES utf8mb4;
@@ -362,13 +362,13 @@ CREATE TABLE `menu_navication`  (
 -- ----------------------------
 -- Records of menu_navication
 -- ----------------------------
-INSERT INTO `menu_navication` VALUES (100, 'LẬP & PHÁT HÀNH', 'thueso.com', '/lap-phat-hanh-hoa-don', 'LẬP & PHÁT HÀNH HÓA ĐƠN ĐIỆN TỬ', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 1, 'fas fa-info-circle', 'LẬP & PHÁT HÀNH', '1');
-INSERT INTO `menu_navication` VALUES (101, 'HÓA ĐƠN ĐÃ PHÁT HÀNH', 'thueso.com', '/hoa-don-da-phat-hanh', 'HÓA ĐƠN ĐÃ PHÁT HÀNH', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 2, 'fas fa-info-circle', 'HÓA ĐƠN ĐÃ PHÁT HÀNH', '1');
-INSERT INTO `menu_navication` VALUES (102, 'HÓA ĐƠN MUA VÀO', 'thueso.com', '/TEST/900', 'HÓA ĐƠN MUA VÀO', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 3, 'fas fa-info-circle', 'HÓA ĐƠN MUA VÀO', '1');
-INSERT INTO `menu_navication` VALUES (103, 'HÓA ĐƠN HỦY', 'thueso.com', '/TEST/900', 'HÓA ĐƠN HỦY', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 4, 'fas fa-info-circle', 'HÓA ĐƠN HỦY', '1');
-INSERT INTO `menu_navication` VALUES (104, 'HÓA ĐƠN KHAI / ĐÃ KHAI THUẾ', 'thueso.com', '/TEST/900', 'HÓA ĐƠN KHAI / ĐÃ KHAI THUẾ', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 5, 'fas fa-info-circle', 'HÓA ĐƠN KHAI / ĐÃ KHAI THUẾ', '1');
-INSERT INTO `menu_navication` VALUES (105, 'ĐỒNG BỘ CÁC HÓA ĐƠN KHÁC HỆ', 'thueso.com', '/TEST/900', 'ĐỒNG BỘ CÁC HÓA ĐƠN KHÁC HỆ', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 6, 'fas fa-info-circle', 'ĐỒNG BỘ CÁC HÓA ĐƠN KHÁC HỆ', '1');
-INSERT INTO `menu_navication` VALUES (106, 'TẠO TÀI KHOẢN PHÂN CẤP', 'thueso.com', '/TEST/900', 'TẠO TÀI KHOẢN PHÂN CẤP', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 7, 'fas fa-info-circle', 'TẠO TÀI KHOẢN PHÂN CẤP', '1');
+INSERT INTO `menu_navication` VALUES (100, 'LẬP & PHÁT HÀNH', 'thueso.com', '/lap-phat-hanh-hoa-don', 'LẬP & PHÁT HÀNH HÓA ĐƠN ĐIỆN TỬ', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 1, 'fas fa-info-circle', 'Lập & phát hành', '1');
+INSERT INTO `menu_navication` VALUES (101, 'HÓA ĐƠN ĐÃ PHÁT HÀNH', 'thueso.com', '/hoa-don-da-phat-hanh', 'HÓA ĐƠN ĐÃ PHÁT HÀNH', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 2, 'fas fa-info-circle', 'Hóa đơn đã phát hành', '1');
+INSERT INTO `menu_navication` VALUES (102, 'HÓA ĐƠN MUA VÀO', 'thueso.com', '/TEST/900', 'HÓA ĐƠN MUA VÀO', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 3, 'fas fa-info-circle', 'Hóa đơn mua vào', '1');
+INSERT INTO `menu_navication` VALUES (103, 'HÓA ĐƠN HỦY', 'thueso.com', '/TEST/900', 'HÓA ĐƠN HỦY', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 4, 'fas fa-info-circle', 'Hóa đơn hủy', '1');
+INSERT INTO `menu_navication` VALUES (104, 'HÓA ĐƠN KHAI / ĐÃ KHAI THUẾ', 'thueso.com', '/TEST/900', 'HÓA ĐƠN KHAI / ĐÃ KHAI THUẾ', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 5, 'fas fa-info-circle', 'Hóa đơn đã khai thuế', '1');
+INSERT INTO `menu_navication` VALUES (105, 'ĐỒNG BỘ CÁC HÓA ĐƠN KHÁC HỆ', 'thueso.com', '/TEST/900', 'ĐỒNG BỘ CÁC HÓA ĐƠN KHÁC HỆ', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 6, 'fas fa-info-circle', 'Đồng bộ các hóa đơn khác hệ thống', '1');
+INSERT INTO `menu_navication` VALUES (106, 'TẠO TÀI KHOẢN PHÂN CẤP', 'thueso.com', '/TEST/900', 'TẠO TÀI KHOẢN PHÂN CẤP', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 7, 'fas fa-info-circle', 'Tạo tài khoản', '1');
 INSERT INTO `menu_navication` VALUES (107, 'THÔNG TIN DOANH NGHIỆP', 'thueso.com', '/thong-tin-doanh-nghiep', 'THÔNG TIN DOANH NGHIỆP', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 8, '', 'Thông tin doanh nghiệp', '0');
 INSERT INTO `menu_navication` VALUES (108, 'CÀI ĐẶT HÓA ĐƠN', 'thueso.com', '/TEST/900', 'CÀI ĐẶT HÓA ĐƠN', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 9, '', 'Cài đặt hóa đơn', '0');
 INSERT INTO `menu_navication` VALUES (109, 'TÌNH HÌNH SỬ DỤNG HÓA ĐƠN', 'thueso.com', '/TEST/900', 'TÌNH HÌNH SỬ DỤNG HÓA ĐƠN', '0', '2019-06-04 00:00:00', NULL, NULL, 100, 10, 'fas fa-info-circle', 'Tình hình sử dụng hóa đơn', '0');
@@ -622,19 +622,19 @@ INSERT INTO `sub_menu_navigation` VALUES (100, 100, 'Lập hóa đơn', 0, 1, '2
 INSERT INTO `sub_menu_navigation` VALUES (101, 100, 'Hóa đơn lưu tạm', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test', '0');
 INSERT INTO `sub_menu_navigation` VALUES (102, 100, 'Hóa đơn chờ duyệt', 0, 3, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
 INSERT INTO `sub_menu_navigation` VALUES (103, 104, 'Hóa đơn phải khai thuế trong kỳ', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (104, 104, 'THỐNG KÊ HÓA ĐƠN ĐÃ KHAI', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (105, 104, 'HÓA ĐƠN ĐÃ BỊ LOẠI', 0, 3, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (106, 105, 'NẠP & SỬ DỤNG HÓA ĐƠN KHÁC HỆ MUA VÀO', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (107, 105, 'NẠP & LƯU DỤNG HÓA ĐƠN KHÁC HỆ ĐÃ KHAI THUẾ', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (108, 105, 'THỐNG KÊ HÓA ĐƠN KHÁC HỆ ĐÃ KHAI THUẾ', 0, 3, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (109, 106, 'LẬPTÀI KHOẢN KHÁCH MUA HÀNG', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (110, 106, 'LẬPTÀI KHOẢN NHÂN VIÊN KHAI THUẾ', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (111, 106, 'LẬPTÀI KHOẢN CÁN BỘ THUẾ', 0, 3, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (112, 106, 'ĐẠI LÝ LẬP TÀI KHOẢN CHO KHÁCH HÀNG', 0, 4, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (113, 108, 'KHỞI TẠO & PHÁT HÀNH MẪU HÓA ĐƠN', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (104, 104, 'Thống kê hóa đơn đã khai', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (105, 104, 'Hóa đơn đã bị loại', 0, 3, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (106, 105, 'Nạp & sử dụng hóa đơn khác hệ thống', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (107, 105, 'Nạp & lưu dụng hóa đơn đã khai khác hệ thống', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (108, 105, 'Thống kế các hóa đơn đã khai thuế', 0, 3, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (109, 106, 'Lập tài khoản khách hàng', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (110, 106, 'Lập tài khoản nhân viên', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (111, 106, 'Lập tài khoản cán bộ thuế', 0, 3, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (112, 106, 'Tài khoản đại lý', 0, 4, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (113, 108, 'Khởi tạo & phát hành mẫu hóa đơn', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
 INSERT INTO `sub_menu_navigation` VALUES (114, 108, 'Kích hoạt sử dụng hóa đơn', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'fas fa-info-circle', 'thueso.com', 'LẬP HÓA ĐƠN', '/test02', '0');
-INSERT INTO `sub_menu_navigation` VALUES (115, 109, 'TÌNH HÌNH SỬ DỤNG & MUA HÓA ĐƠN', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
-INSERT INTO `sub_menu_navigation` VALUES (116, 109, 'LỊCH SỬ MUA HÓA ĐƠN', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (115, 109, 'Tình hình sử dụng hóa đơn', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
+INSERT INTO `sub_menu_navigation` VALUES (116, 109, 'Lịch sử mua hóa đơn', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
 INSERT INTO `sub_menu_navigation` VALUES (117, 110, 'Danh mục sản phẩm', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
 INSERT INTO `sub_menu_navigation` VALUES (118, 110, 'Nhập sản phẩm dịch vụ', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
 
