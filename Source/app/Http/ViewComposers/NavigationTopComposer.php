@@ -19,6 +19,6 @@ class NavigationTopComposer
         $menus = $nav_menu->loadMenuHeader(100, "0", "0");
         $collections = new Collection();
         $collections->push($menus);
-        $view->with('main', $collections[0]);
+        $view->with('nav_header', $collections[0]);
     }
 }

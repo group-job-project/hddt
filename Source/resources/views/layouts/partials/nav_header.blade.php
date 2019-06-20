@@ -7,19 +7,20 @@
 	<div class="navbar-collapse offcanvas-collapse"
 		id="navbarsExampleDefault">
 		<ul class="navbar-nav mr-auto">
-			@isset($main)
-				@for ($i = 0; $i < count($main); $i++)
-					@if($main[$i]->sub_menu_name == "")
-						<li class="nav-item"><a class="nav-link" href="#" title="Profile"><i
-										class="fas fa-info-circle"></i> {{$main[$i]->alias}}</a></li>
+			@isset($nav_header)
+				@for ($i = 0; $i < count($nav_header); $i++)
+					@if($nav_header[$i]->sub_menu_name == "")
+						<li class="nav-item"><a class="nav-link" href="{{$nav_header[$i]->menu_link}}{{$nav_header[$i]->menu_parameter}}" title="{{$nav_header[$i]->tooltip}}">
+						<i class="{{$nav_header[$i]->icon}}"></i> {{$nav_header[$i]->alias}}</a></li>
 					@else
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-														 href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-														 aria-expanded="false">{{$main[$i]->alias}}</a>
+														 href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+														 aria-expanded="false">{{$nav_header[$i]->alias}}</a>
 
 							<div class="dropdown-menu" aria-labelledby="dropdown01">
-								@for($j = $i; $j < count($main) && $main[$j]->menu_id == $main[$i]->menu_id; $j++)
-									<a class="dropdown-item" href="#">{{$main[$j]->sub_menu_name}}</a>
+								@for($j = $i; $j < count($nav_header) && $nav_header[$j]->menu_id == $nav_header[$i]->menu_id; $j++)
+									<a class="dropdown-item" href="{{$nav_header[$j]->sub_menu_link}}{{$nav_header[$j]->sub_menu_parameter}}" title="{{$nav_header[$j]->sub_menu_tooltip}}" >
+									<i class="{{$nav_header[$j]->sub_icon}}"></i> {{$nav_header[$j]->sub_menu_name}}</a>
 									@php
 										$i = $j;
 									@endphp
