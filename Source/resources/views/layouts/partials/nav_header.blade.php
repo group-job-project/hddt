@@ -10,7 +10,7 @@
 			@isset($nav_header)
 				@for ($i = 0; $i < count($nav_header); $i++)
 					@if($nav_header[$i]->sub_menu_name == "")
-						<li class="nav-item"><a class="nav-link" href="{{$nav_header[$i]->menu_link}}{{$nav_header[$i]->menu_parameter}}" title="{{$nav_header[$i]->tooltip}}">
+						<li class="nav-item"><a class="nav-link" href="{{$nav_header[$i]->menu_link}}{{$nav_header[$i]->menu_parameter}}" title="{{$nav_header[$i]->menu_tooltip}}">
 						<i class="{{$nav_header[$i]->icon}}"></i> {{$nav_header[$i]->alias}}</a></li>
 					@else
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
@@ -27,7 +27,6 @@
 								@endfor
 							</div>
 						</li>
-
 					@endif
 				@endfor
 			@endisset
