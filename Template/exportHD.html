@@ -1,0 +1,896 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <title>Xuất hoá đơn</title>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand mr-lg-0" href="#"><b>A.T&T</b> </a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" title="Profile"><i class="fas fa-info-circle"></i> Thông tin doanh nghiệp</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cài đặt hoá đơn</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Khởi tạo & khai báo mẫu hoá đơn</a>
+                        <a class="dropdown-item" href="#">Kích hoạt sử dụng mẫu hoá đơn</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown044" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tình hình sử dụng hoá đơn</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown044">
+                        <a class="dropdown-item" href="#">Tình hình sử dụng và mua hoá đơn</a>
+                        <a class="dropdown-item" href="#">Lịch sử mua & nhận hoá đơn</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown045" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản phẩm dịch vụ</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown045">
+                        <a class="dropdown-item" href="#">Nhập sản phẩm dịch vụ</a>
+                        <a class="dropdown-item" href="#">Danh mục sản phẩm dịch vụ</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown046" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tiện ích</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown046">
+                        <a class="dropdown-item" href="#">Thư mục mẫu hoá đơn</a>
+                        <a class="dropdown-item" href="#">Hỗ trợ trực tuyến </a>
+                        <a class="dropdown-item" href="#">Cài đặt teamviwer</a>
+                        <a class="dropdown-item" href="#">Zalo: 0941 xxx </a>
+                        <a class="dropdown-item" href="#">Tài liệu hướng dẫn </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Thoát</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="nav-scroller bg-white shadow-sm">
+        <nav class="nav nav-underline">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lập & Phát hành</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown03">
+                    <a class="dropdown-item" href="search_mst.html">Lập hoá đơn</a>
+                    <a class="dropdown-item" href="danhsachhoadon_nhap.html">Hóa đơn lưu tạm</a>
+                    <a class="dropdown-item" href="danhsachhoadon_choduyet.html">Hóa đơn chờ duyệt</a>
+                </div>
+            </div>
+            <a class="nav-link" href="hoadondaxuat.html">Hoá đơn đã phát hành</a>
+            <a class="nav-link" href="hoadondauvao.html">Hoá đơn đã mua</a>
+            <a class="nav-link" href="hoadonhuy.html">Hoá đơn đã huỷ</a>
+
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hoá đơn khai / Đã khai thuế</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">Hoá đơn phải khai thuế trong kỳ</a>
+                    <a class="dropdown-item" href="#">Thống kê hoá đơn đã khai thuế</a>
+                    <a class="dropdown-item" href="#">Hoá đơn đã bị loại </a>
+                </div>
+            </div>
+
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="https://example.com" id="dropdown03" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Đồng bộ hoá đơn khác hệ</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown03">
+                    <a class="dropdown-item" href="tichhophoadonngoai.html">Nạp & Sử dụng hoá đơn khác hệ đã mua</a>
+                    <a class="dropdown-item" href="#">Nạp & Lưu dụng hoá đơn khác hệ đã khai thuế</a>
+                    <a class="dropdown-item" href="#">Thống kê các hoá đơn khác hệ đã khai thuế </a>
+                </div>
+            </div>
+
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tạo tài khoản phân cấp</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown02">
+                    <a class="dropdown-item" href="#">Tạo tài khoản khách mua hàng</a>
+                    <a class="dropdown-item" href="#">Tạo tài khoản nhân viên khai thuế</a>
+                    <a class="dropdown-item" href="#">Tạo tài khoản cán bộ thuế</a>
+                    <a class="dropdown-item" href="#">Danh sách tài khoản khách mua </a>
+                    <a class="dropdown-item" href="#">Đại lý tạo tài khoản sử dụng cho khách </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main role="main" class="container" style="padding-right: 0px !important; padding-left: 0px !important;">
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+            <div class="lh-100">
+                <h4 class="mb-0 text-white lh-100" style="padding-bottom: 10px;">HOÁ ĐƠN GIÁ TRỊ GIA TĂNG</h4>
+                <h6 class="mb-0 text-white lh-100"> VAT INVOICE </h6>
+            </div>
+        </div>
+
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+            <div style="margin-bottom: 30px;">
+                <h6><b>THÔNG TIN BÊN BÁN HÀNG</b></h6> 
+            </div>
+            <div class="row">
+                <div class="col-9">
+                    <form>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Mã số thuế (Tax Code) <span style="color: red;">*</span></label>
+                            <div class="col-sm-8">
+                                <span class="badge badge-primary">0</span>
+                                <span class="badge badge-primary">3</span>
+                                <span class="badge badge-primary">0</span>
+                                <span class="badge badge-primary">2</span>
+                                <span class="badge badge-primary">6</span>
+                                <span class="badge badge-primary">0</span>
+                                <span class="badge badge-primary">1</span>
+                                <span class="badge badge-primary">9</span>
+                                <span class="badge badge-primary">4</span>
+                                <span class="badge badge-primary">5</span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Tên người bán hàng (Buyer)</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control-plaintext" id="staticEmail" value="Nguyễn Hoàng Kha">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Tên Doanh nghiệp (Company Name) <span style="color: red;">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Công ty TNHH Dịch Vụ - Thương Mại A.T&T">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Địa chỉ (Address) <span style="color: red;">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="285 Lô 99 Cách Mạng Tháng Tám, Phường 12, Q.10, TP.Hồ Chí Minh">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Tỉnh/Thành Phố <span style="color: red;">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control-plaintext" id="inputGroupSelect01">
+                                    <option selected>TP.Hồ Chí Minh</option>
+                                    <option value="1">TP.Hà Nội</option>
+                                    <option value="2">TP.Cần Thơ</option>
+                                    <option value="3">TP.Cà Mau</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Điện thoại (Tel) <span style="color: red;">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="+84 (028) 38634980">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Fax</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="+84 (028) 38634980">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Email <span style="color: red;">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="info@attvn.vn">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Số TK ngân hàng (A/C Bank Number)</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Tên ngân hàng (A/C Bank Name)</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-3">
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Mẫu số</label>
+                        <div class="col-sm-7">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="901GTKT0/025">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Ký hiệu</label>
+                        <div class="col-sm-7">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="KT0/025">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Số (Tự tăng)</label>
+                        <div class="col-sm-7">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="0000000">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-5 col-form-label">Ngày xuất</label>
+                        <div class="col-sm-7">
+                            <input type="text" id="datepicker" readonly class="form-control-plaintext">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+            <div style="margin-bottom: 30px;">
+                <h6><b>THÔNG TIN BÊN MUA HÀNG</b></h6> 
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Mã số thuế (Tax Code) <span style="color: red;">*</span></label>
+                        <div class="col-sm-9">
+                            <span class="badge badge-primary">6</span>
+                            <span class="badge badge-primary">3</span>
+                            <span class="badge badge-primary">0</span>
+                            <span class="badge badge-primary">0</span>
+                            <span class="badge badge-primary">2</span>
+                            <span class="badge badge-primary">5</span>
+                            <span class="badge badge-primary">1</span>
+                            <span class="badge badge-primary">7</span>
+                            <span class="badge badge-primary">1</span>
+                            <span class="badge badge-primary">0</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Tên người mua hàng (Buyer)</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control-plaintext" id="staticEmail" value="Phạm Thanh Quang">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Tên Doanh nghiệp (Company Name) <span style="color: red;">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control-plaintext" id="staticEmail" value="Công ty Cổ phần đầu tư công nghệ và thương mại SDS -999">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Địa chỉ (Address) <span style="color: red;">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control-plaintext" id="staticEmail" value="Phòng 923, tòa nhà CT5, khu đô thị Sông Đà, Mễ Trì, Bắc Từ Liêm, Hà Nội">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Tỉnh/Thành Phố <span style="color: red;">*</span></label>
+                        <div class="col-sm-3">
+                            <select class="form-control-plaintext" id="inputGroupSelect01">
+                                <option selected>TP.Hồ Chí Minh</option>
+                                <option value="1">TP.Hà Nội</option>
+                                <option value="2">TP.Cần Thơ</option>
+                                <option value="3">TP.Cà Mau</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Điện thoại (Tel)</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="+84 (028) 12345678">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Fax</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="+84 (028) 12345678">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Số TK ngân hàng (A/C Bank Number)</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="03513824988">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Tên ngân hàng (A/C Bank Name)</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Ngân hàng Đông Á chi nhánh Kỳ Đồng">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Hình thức thanh toán (Payment method)</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control-plaintext" id="staticEmail" value="TM/CK">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-1 width-col-1">
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="staticEmail" class="col-form-label">STT</label>
+                                <label for="staticEmail" class="col-form-label">No.</label>
+                            </div>
+                            <div class="col-12 ">
+                                <label for="staticEmail" class="col-form-label form-align-center">1</label>
+                            </div>
+                            <div class="col-12 ">
+                                <label for="staticEmail" class="col-form-label form-align-center">3</label>
+                            </div>
+                            <div class="col-12 ">
+                                <label for="staticEmail" class="col-form-label form-align-center">4</label>
+                            </div>
+                            <div class="col-12 ">
+                                <label for="staticEmail" class="col-form-label form-align-center">5</label>
+                            </div>
+                            <div class="col-12 ">
+                                <label for="staticEmail" class="col-form-label form-align-center">6</label>
+                            </div>
+                            <div class="col-12 ">
+                                <label for="staticEmail" class="col-form-label form-align-center">7</label>
+                            </div>
+                            <div class="col-12 ">
+                                <label for="staticEmail" class="col-form-label form-align-center">8</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-5 width-col-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="staticEmail" class="col-form-label">Tên hàng hóa, dịch vụ</label>
+                                <p for="staticEmail" class="col-form-label">Items Description</p>
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext" id="tenhanghoa" value="Milano">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext" id="tenhanghoa1" value="Milano">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext" id="tenhanghoa2" value="Milano">
+                            </div>
+                            <div class="col-12 ">
+
+                                <input type="text" class="form-control-plaintext" id="tenhanghoa3" value="Milano">
+                            </div>
+                            <div class="col-12 ">
+
+                                <input type="text" class="form-control-plaintext" id="tenhanghoa4" value="Milano">
+                            </div>
+                            <div class="col-12 ">
+
+                                <input type="text" class="form-control-plaintext" id="tenhanghoa5" value="Milano">
+                            </div>
+                            <div class="col-12 ">
+
+                                <input type="text" class="form-control-plaintext" id="tenhanghoa6" value="Milano">
+                            </div>
+                            <div class="col-12 ">
+
+                                <input type="text" class="form-control-plaintext" id="tenhanghoa7" value="Milano">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <div class="row" style="text-align: center;">
+                            <div class="col-12">
+                                <label for="staticEmail" class="col-form-label">ĐVT</label>
+                                <p for="staticEmail" class="col-form-label">Unit</p>
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="2">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="10">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="18">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="26">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="34">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="42">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="50">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="57">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col-1">
+                        <div class="row" style="text-align: center;">
+                            <div class="col-12">
+                                <label for="staticEmail" class="col-form-label">SL</label>
+                                <p for="staticEmail" class="col-form-label">Quantity</p>
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="3">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="11">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="19">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="27">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="35">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="43">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="51">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-center" id="staticEmail" value="" tabindex="58">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col-2">
+                        <div class="row">
+                            <div class="col-12 " style="text-align: right;">
+                                <label for="staticEmail" class="col-form-label">Đơn giá</label>
+                                <p for="staticEmail" class="col-form-label">Unit price</p>
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="4">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="12">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="20">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="28">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="36">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="44">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="52">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="59">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-2  ">
+                        <div class="row">
+                            <div class="col-12 " style="text-align: right;">
+                                <label for="staticEmail" class="col-form-label">Thành tiền</label>
+                                <p for="staticEmail" class="col-form-label">Amount</p>
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="5">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="13">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="21">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="29">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="37">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="45">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="53">
+                            </div>
+                            <div class="col-12 ">
+                                <input type="text" class="form-control-plaintext form-align-right" id="staticEmail" value="" tabindex="60">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="row justify-content-end margin-div-sum">
+                            <div class="col-4 col-align-right-sum">
+                                Cộng tiền hàng (Total Amount):
+                            </div>
+                            <div class="col-3 col-align-right-sum" style="border-bottom: 1px dotted #888888; padding-right: 0px !important; margin-right:15px !important;">
+                                5300.000.000.000
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-end margin-div-sum">
+                            <div class="col-4 col-align-right-sum">
+                                <label for="inlineFormCustomSelect">Thuế suất (Tax Rate):</label>
+                                <select style="border:1px solid #898989 !important;background-color:#ffffff;border-bottom: 1px dotted #888888; margin-right: 15px !important; padding-right: 0px!important;border-radius: 4px;">
+                                    <option>5%</option>
+                                    <option >10%</option>
+                                    <option>12%</option>
+                                    
+                                </select>
+                            </div>
+
+                            <div class="col-4 col-align-right-sum">
+                                Cộng tiền thuế GTGT (Total Tax):
+                            </div>
+                            <div class="col-3 col-align-right-sum" style="border-bottom: 1px dotted #888888; padding-right: 0px !important; margin-right:15px !important;">
+                                63.000.000
+                            </div>
+                        </div>
+
+
+                        <div class="row justify-content-end margin-div-sum">
+                            <div class="col-5 col-align-right-sum">
+                                Tổng cộng tiền thanh toán (Invoice Total):
+                            </div>
+                            <div class="col-3 col-align-right-sum" style="border-bottom: 1px dotted #888888; padding-right: 0px !important; margin-right:15px !important;">
+                                315,115,500
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="row margin-div-sum">
+                            <div class="col-2 width-col-2">
+                                Số tiền viết bằng chữ:<br/>
+                                (Invoice total in word)
+                            </div>
+                            <div class="col-10 width-col-10" style="border-bottom: 1px dotted #888888;height: 20px;">
+                                <p>Ba trăm mười lăm triệu một trăm mười lăm nghìn năm trăm đồng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+
+            <div class="row justify-content-center">
+                <div class="col-4">
+
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Hoá đơn chưa thanh toán</label>
+                    </div>
+
+                </div>
+
+                <div class="col-8" style="text-align:right;">
+                    <button type="button" class="btn btn-preview" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i> Xem trước</button>
+                    <button type="button" class="btn btn-save-draft" onclick="javascript:location.href = 'danhsachhoadon_nhap.html';"><i class="fas fa-save"></i> Lưu tạm</button>
+                    <button type="button" class="btn btn-wating-accept"><i class="fas fa-business-time"></i> Chờ duyệt</button>
+                    <button type="button" class="btn btn-accept"><i class="fas fa-box"></i> Phát hành</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modal Preview VAT -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg-custom" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12" style="text-align: center;background-color: #45b4c5;padding: 20px 20px 5px 20px; color: #ffffff;">
+                                <h4><b>XEM TRƯỚC</b></h4>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="container" style="background-color: #FAE6E8; margin-bottom: 2cm; padding-top: 10px; padding-: 10px;">
+                        <div class="row">
+                            <div class="col-2 img-logo-size" style="background-image:url('logo.jpg'); background-repeat: no-repeat;background-size: contain;background-position: top;"></div>
+                            <div class="col-10 content-hd">
+                                <h5>Công ty Cổ phần đầu tư công nghệ và thương mại SDS</h5>
+                                <h6>Mã số thuế (Tax Code): 0 1 0 5 9 8 7 4 3 2 - 9 9 9</h6>
+                                <h6>Địa chỉ (Address): Phòng 923, tòa nhà CT5, khu đô thị Sông Đà, Mễ Trì, Bắc Từ Liêm,
+                                Hà Nội</h6>
+                                <h6>Điện thoại (Tel): 0164397527  - Fax: 03513824988</h6>
+                                <h6>Email: tannamhai@gmail.com  - Website: mynghedaibai.com</h6>
+                                <h6>Tài khoản (A/C Bank number): 14023967248013 Chi nhánh TECHCOMBANK Q5</h6>
+
+
+                            </div>
+                        </div>
+                        <hr style="border-top: 1px dotted #8c8b8b;" />
+                        <div class="row">
+
+                            <div class="col" style="text-align: center !important;position:relative;">
+                                <h4><b>HOÁ ĐƠN GIÁ TRỊ GIA TĂNG</b></h4>
+                                <h5> (VAT INVOICE)</h5>
+                                <h6>Ngày...Tháng...Năm...</h6>
+
+                                <div class="col-md-4 offset-md-8" style="position:absolute;top:0px;text-align: right;padding-right: 30px;">
+
+                                    <h6>Mẫu số (Form): 01GTKT0/032</h6>
+                                    <h6>Ký hiệu (Serial): AA/18E</h6>
+                                    <h6>Số (No.): 0000036</h6>
+
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <!--  <div class="row"> -->
+
+                          <div class="row">
+                            <label for="staticEmail" class="col-sm-3 col-form-label">Họ tên người mua hàng (Buyer):</label>
+                            <div class="col-sm-9 border-bottom-content">
+                              <input type="text" class="form-control-plaintext" id="staticEmail" value="">
+                          </div>
+                      </div>
+                      <div class="row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Tên đơn vị (Company name):</label>
+                        <div class="col-sm-9 border-bottom-content">
+                          <input type="text" class="form-control-plaintext" id="companyName" value="Công ty TNHH MTV TMDV PAVIETNAM">
+                      </div>
+                  </div>
+
+                  <div class="row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label">Địa chỉ (Address):</label>
+                    <div class="col-sm-9 border-bottom-content">
+                      <input type="text" class="form-control-plaintext" id="address" value="Lô BIV, CI-10, Khu công nghiệp Tân Hương, Xã Tân Hương, Huyện Châu Thành, Tỉnh Tiền Giang, Việt Nam">
+                  </div>
+              </div>
+
+              <div class="row">
+                <label for="inputPassword" class="col-sm-3 col-form-label">Mã số thuế (Tax Code):</label>
+                <div class="col-sm-9 border-bottom-content">
+                  <input type="text" disabled="true" class="form-control-plaintext word-spacing-text" id="address" value="6300251710">
+              </div>
+          </div>
+
+          <div class="row">
+
+
+            <label for="inputPassword" class="col-sm-3 col-form-label">Số tài khoản (A/C Bank number):</label>
+            <div class="col-sm-9 border-bottom-content">
+                <input type="text" class="form-control-plaintext" id="address" value="0095565644543">
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">Tại ngân hàng (Bank Name):</label>
+            <div class="col-sm-9 border-bottom-content">
+              <input type="text" class="form-control-plaintext" id="address" value="VietComBank Chi nhánh Trường Chinh, Quận Tân Bình, TP.HCM">
+          </div>
+      </div>
+
+      <div class="row">
+        <label for="inputPassword" class="col-sm-3 col-form-label">Hình thức thanh toán (Payment by):</label>
+        <div class="col-sm-3 border-bottom-content">
+          <input type="text" class="form-control-plaintext" id="address" value="CK/TM">
+      </div>
+  </div>
+
+  <div class="row" style="background-image:url('Temp1.png'); background-repeat: no-repeat; background-position: center;background-size: auto;margin-top: 20px;">
+    <div class="col">
+        <table class="table table-bordered">
+            <thead>
+                <tr style="text-align: center;">
+                    <th scope="col" style="width:35px">STT <br /> (No.)</th>
+                    <th scope="col">Tên hàng hóa, dịch vụ <br /> (Items description)</th>
+                    <th scope="col">Đơn vị tính<br /> (Unit)</th>
+                    <th scope="col">Số lượng<br /> (Quantity)</th>
+                    <th scope="col">Đơn giá<br /> (Price)</th>
+                    <th scope="col">Thành tiền<br /> (Amount)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">1</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">2</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">3</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">4</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">5</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">6</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">7</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">8</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">9</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">10</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="col-align-right-sum"><b>Cộng tiền hàng (Total Amount):</b></td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="col-align-right-sum"><b>Thuế suất GTGT (Tax Rate):</b> 10%</td>
+
+                    <td colspan="3" class="col-align-right-sum"><b>Tiền thuế GTGT (Total Tax):</b></td>
+
+                    <td class="col-align-right-sum">4.160.000</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="col-align-right-sum"><b>Tổng cộng tiền thanh toán (Invoice Total):</b></td>
+                    <td class="col-align-right-sum">45.600.000</td>
+                </tr>
+                <tr>
+
+                    <td colspan="2" class="col-align-right-sum" style="vertical-align: middle;"><b>Số tiền viết bằng chữ (Amount in word):</b></td>
+                    <td colspan="6">Chín mươi chín tỷ chín trăm chín mươi chín triệu chín trăm chín mươi chín nghìn đồng.</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div class="row" style="min-height: 200px;">
+    <div class="col form-align-center">
+        <b>Người mua hàng</b>
+        <small></small>
+    </div>
+    <div class="col form-align-center">
+        <b>Người bán hàng</b>
+        <small></small>
+    </div>
+</div>
+<div class="row" style="text-align: center;color: #d93025;">
+    
+    <div class="col-12">
+        <span style="font-size: 0.7rem;">
+            <b>Đăng nhập tra cứu tại: https://hdgtgt.com/hd | Mã tra cứu: 999999999</b><br>
+            <b>Cung cấp giải pháp hệ thống: Công ty TNHH MTV Quảng Cáo- Thương mại Nam Phuong - MST: 0309234853</b>
+        </span>
+    </div>
+</div>
+</div>
+<div class="container my-3 p-3 bg-white rounded shadow-sm">
+
+    <div class="row justify-content-center">
+        <div class="col-4">
+
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Hoá đơn chưa thanh toán</label>
+            </div>
+
+        </div>
+
+        <div class="col-8" style="text-align: right;">
+            <button type="button" class="btn btn-save-craft"><i class="fas fa-times"></i> Đóng lại</button>
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+</main>
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>
+        <script src="https://getbootstrap.com/docs/4.1/examples/offcanvas/offcanvas.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="2" style="font-weight:bold;font-size:2pt;font-family:Arial, Helvetica, Open Sans, sans-serif">32x32</text></svg>
+        <script>
+          $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+    </script>
+</body>
+</html>

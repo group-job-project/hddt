@@ -1,0 +1,160 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet">
+    <title>Hello, world!</title>
+</head>
+<body class="login-page">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <div class="row">
+            <div class="col">
+                <div class="block_logo">
+                    <div class="logo">
+                        <a href="#">THUESO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Block Input-->
+        <div class="container">
+            <div class="d-flex justify-content-center d-flex-margin">
+                <div class="row">
+                    <div class="col">
+                        <div class="block_login">
+                            <h3>Hệ thống quản lý hoá đơn</h3>
+                            <div class="signOnCreds">
+                                <form autocomplete="off">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-lg" id="inputidentity" aria-describedby="emailHelp" placeholder="Mã số thuế">
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="password" class="form-control form-control-lg" id="inputpassword" placeholder="Mật khẩu">
+                                    </div>
+                                    <button type="submit" class="btn btn-sign">Đăng nhập</button>
+                                </form>
+                                <!-- lost password -->
+                                <a data-toggle="modal" data-target=".bd-modal-lost-password" href="#">Quên mật khẩu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Send Request -->
+            <div class="d-flex justify-content-center d-flex-margin">
+                <div class="row">
+                    <div class="col">
+                        <div class="block_login">
+                            <h3>Bạn chưa có tài khoản ?</h3>
+                            <div class="signOnCreds">
+                                <form autocomplete="off">
+                                    <button type="button" class="btn btn-sign-new" data-toggle="modal" data-target=".bd-modal-register">Liên hệ với chúng tôi</button>
+                                </form>
+                                <div class="term-of-use">
+                                    <ul>
+                                        <li>
+                                            <a href="#">© NMP </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Điều khoản sử dụng</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Chính sách bảo mật</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal register  -->
+    <section class="ss-modal-register">
+        <div class="modal fade bd-modal-register" id="modalregiter" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">THÔNG TIN LIÊN HỆ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form autocomplete="off">
+                            <div class="lst-input-register">
+                                <input type="text" class="form-control form-control-lg" id="inputName" aria-describedby="emailHelp" placeholder="Tên công ty" focus>
+                            </div>
+                            <div class="lst-input-register">
+                                <input type="text" class="form-control form-control-lg" id="inputidentity" aria-describedby="emailHelp" placeholder="Địa chỉ">
+                            </div>
+                            <div class="lst-input-register">
+                                <input type="text" class="form-control form-control-lg" id="inputidentity" aria-describedby="emailHelp" placeholder="Số điện thoại">
+                            </div>
+                            <div class="lst-input-register">
+                                <input type="text" class="form-control form-control-lg" id="inputidentity" aria-describedby="emailHelp" placeholder="Người liên hệ">
+                            </div>
+                            <div class="lst-input-register">
+                                <input type="text" class="form-control form-control-lg" id="inputidentity" aria-describedby="emailHelp" placeholder="Chức vụ">
+                            </div>
+                            <div class="lst-input-register">
+                                <textarea class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3" placeholder="Nội dung"></textarea>
+                            </div>
+                        </form>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-sign">Gửi thông tin</button>
+                     </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ss-modal-lost-password">
+        <div class="modal fade bd-modal-lost-password" id="modallostpaword" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">RESET MẬT KHẨU</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form autocomplete="off">
+                            <div class="lst-input-register">
+                                <input type="text" class="form-control form-control-lg" id="inputEmail" aria-describedby="emailHelp" placeholder="Nhập email" focus>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sign">Gửi thông tin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="UTF-8" language="javascript" src="script.js"></script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            jsLogin.setFocusLoginPage();
+            jsLogin.setFocusModal('modalregiter','inputName');
+
+        });
+    </script>
+</body>
+</html>
