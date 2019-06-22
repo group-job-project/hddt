@@ -1,0 +1,1081 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <title>Xuất hoá đơn</title>
+    
+</head>
+<body class="bg-light" id="body">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand mr-lg-0" href="#"><b>A.T&T</b> </a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" title="Profile"><i class="fas fa-info-circle"></i> Thông tin doanh nghiệp</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cài đặt hoá đơn</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Khởi tạo & khai báo mẫu hoá đơn</a>
+                        <a class="dropdown-item" href="#">Kích hoạt sử dụng mẫu hoá đơn</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown044" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tình hình sử dụng hoá đơn</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown044">
+                        <a class="dropdown-item" href="#">Tình hình sử dụng và mua hoá đơn</a>
+                        <a class="dropdown-item" href="#">Lịch sử mua & nhận hoá đơn</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown045" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản phẩm dịch vụ</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown045">
+                        <a class="dropdown-item" href="#">Nhập sản phẩm dịch vụ</a>
+                        <a class="dropdown-item" href="#">Danh mục sản phẩm dịch vụ</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown046" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tiện ích</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown046">
+                        <a class="dropdown-item" href="#">Thư mục mẫu hoá đơn</a>
+                        <a class="dropdown-item" href="#">Hỗ trợ trực tuyến </a>
+                        <a class="dropdown-item" href="#">Cài đặt teamviwer</a>
+                        <a class="dropdown-item" href="#">Zalo: 0941 xxx </a>
+                        <a class="dropdown-item" href="#">Tài liệu hướng dẫn </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Thoát</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="nav-scroller bg-white shadow-sm">
+        <nav class="nav nav-underline">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lập & Phát hành</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown03">
+                    <a class="dropdown-item" href="search_mst.html">Lập hoá đơn</a>
+                    <a class="dropdown-item" href="danhsachhoadon_nhap.html">Hóa đơn lưu tạm</a>
+                    <a class="dropdown-item" href="danhsachhoadon_choduyet.html">Hóa đơn chờ duyệt</a>
+                </div>
+            </div>
+            <a class="nav-link" href="hoadondaxuat.html">Hoá đơn đã phát hành</a>
+            <a class="nav-link" href="hoadondauvao.html">Hoá đơn đã mua</a>
+            <a class="nav-link" href="hoadonhuy.html">Hoá đơn đã huỷ</a>
+
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hoá đơn khai / Đã khai thuế</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">Hoá đơn phải khai thuế trong kỳ</a>
+                    <a class="dropdown-item" href="#">Thống kê hoá đơn đã khai thuế</a>
+                    <a class="dropdown-item" href="#">Hoá đơn đã bị loại </a>
+                </div>
+            </div>
+
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="https://example.com" id="dropdown03" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Đồng bộ hoá đơn khác hệ</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown03">
+                    <a class="dropdown-item" href="tichhophoadonngoai.html">Nạp & Sử dụng hoá đơn khác hệ đã mua</a>
+                    <a class="dropdown-item" href="#">Nạp & Lưu dụng hoá đơn khác hệ đã khai thuế</a>
+                    <a class="dropdown-item" href="#">Thống kê các hoá đơn khác hệ đã khai thuế </a>
+                </div>
+            </div>
+
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tạo tài khoản phân cấp</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown02">
+                    <a class="dropdown-item" href="#">Tạo tài khoản khách mua hàng</a>
+                    <a class="dropdown-item" href="#">Tạo tài khoản nhân viên khai thuế</a>
+                    <a class="dropdown-item" href="#">Tạo tài khoản cán bộ thuế</a>
+                    <a class="dropdown-item" href="#">Danh sách tài khoản khách mua </a>
+                    <a class="dropdown-item" href="#">Đại lý tạo tài khoản sử dụng cho khách </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="jumbotron jumbotron-custom">
+        <div class="container">
+            <nav aria-label="breadcrumb ">
+                <ol class="breadcrumb-custom">
+                    <li class="breadcrumb-item"><a class="color-breadcrumb" href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a class="color-breadcrumb" href="#"><b>Hoá đơn chờ duyệt</b></a></li>
+                </ol>
+            </nav>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="staticEmail" class="col-sm-3 col-form-label"><b>Mã tra cứu hoá đơn</b></label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control-plaintext" id="staticEmail" value="XXXXXXXXXXXXXXX6666">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="staticEmail" class="col-sm-3 col-form-label"><b>Mã số thuế</b></label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control-plaintext" id="staticEmail" value="985555545555">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="staticEmail" class="col-sm-2 col-form-label"><b>Tên đơn vị mua hàng</b></label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control-plaintext" id="staticEmail" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <button type="submit" class="btn btn-save-craft"><i class="fas fa-search"></i> Truy xuất thông tin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+     <div class="row" style="margin-top: 0px;margin-bottom: 10px;">
+        <div class="col-12" style="padding-left: 5px;">
+            <button type="submit" data-toggle="collapse" data-target="#tb-list-tax-request" aria-expanded="true" aria-controls="tb-list-tax-request" class="btn btn-save-craft">
+                <i class="far fa-list-alt"></i> Hoá đơn phát hành chờ duyệt
+            </button>
+
+            <button type="submit" data-toggle="collapse" data-target="#collapseExample_34" aria-expanded="true" aria-controls="collapseExample_34" class="btn btn-save-craft">
+                <i class="fas fa-list-ul"></i> Hoá đơn mua vào chờ duyệt <span class="badge badge-pill badge-info">4</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="padding-right: 0px !important; padding-left: 0px !important;">
+
+  <!-- Modal -->
+  <div class="collapse" id="collapseExample_34" style="padding-left: 5px; padding-right: 5px;">
+    <table class="table table-bordered table-hover table-center table-font-size">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Ngày phát hảnh</th>
+                <th scope="col">Mã tra cứu</th>
+                <th scope="col">Mẫu số</th>
+                <th scope="col">Ký hiệu</th>
+                <th scope="col">Số hoá đơn</th>
+                <th scope="col">Tên đơn vị mua hàng</th>
+                <th scope="col">MST</th>
+                <th scope="col">Tổng giá trị</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col" colspan="2">Tác vụ</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter_2"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"><a href="#" data-toggle="modal" data-target="#messenger"><i style="color: red;" class="far fa-bell"></i></a></td>
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter_2"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"><a href="#"><i class="far fa-comment"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="collapse" id="tb-list-tax-request" style="padding-left: 5px; padding-right: 5px;">
+    <table class="table table-bordered table-hover table-center table-font-size">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Ngày phát hành</th>
+                <th scope="col">Mã tra cứu</th>
+                <th scope="col">Mẫu số</th>
+                <th scope="col">Ký hiệu</th>
+                <th scope="col">Số hoá đơn</th>
+                <th scope="col">Tên đơn vị mua hàng</th>
+                <th scope="col">MST</th>
+                <th scope="col">Tổng giá trị</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col" colspan="4">Tác vụ</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#messenger"><i style="color: red;" class="far fa-bell"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-envelope"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="far fa-comment"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-envelope"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="far fa-comment"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-envelope"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="far fa-comment"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-envelope"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="far fa-comment"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-envelope"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="far fa-comment"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-envelope"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="far fa-comment"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-envelope"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="far fa-comment"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-envelope"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">1</th>
+                <td class="td-center"></td>
+                <td class="td-center"></td>
+                <td class="td-center">01GTKT0/025</td>
+                <td class="td-center">GP/17E</td>
+                <td class="td-center"></td>
+                <td>CÔNG TY TNHH THƯƠNG MẠI QUỐC TẾ GIA LÊ GLOBAL</td>
+                <td class="td-center">6300251710</td>
+                <td class="td-right">999999999999999</td>
+                <td class="td-center">Chờ duyệt</td>
+                <td class="td-center"> <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-eye"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="far fa-comment"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-envelope"></i></a></td>
+                <td class="td-center"> <a href="#"><i class="fas fa-trash-alt"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+<!-- Modal Preview VAT -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg-custom" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" style="text-align: center;background-color: #2a26dd;padding: 20px 20px 5px 20px; color: #ffffff;">
+                        <h4><b>HOÁ ĐƠN PHÁT HÀNH CHỜ DUYỆT</b></h4>
+                    </div>
+                </div>  
+            </div>
+            <div class="container" style="background-color: #FAE6E8; margin-bottom: 2cm; padding-top: 10px; padding-: 10px;">
+                <div class="row">
+                    <div class="col-2 img-logo-size" style="background-image:url('logo.jpg'); background-repeat: no-repeat;background-size: contain;background-position: top;"></div>
+                    <div class="col-10 content-hd">
+                        <h5>Công ty Cổ phần đầu tư công nghệ và thương mại SDS</h5>
+                        <h6>Mã số thuế (Tax Code): 0 1 0 5 9 8 7 4 3 2 - 9 9 9</h6>
+                        <h6>Địa chỉ (Address): Phòng 923, tòa nhà CT5, khu đô thị Sông Đà, Mễ Trì, Bắc Từ Liêm,
+                        Hà Nội</h6>
+                        <h6>Điện thoại (Tel): 0164397527  - Fax: 03513824988</h6>
+                        <h6>Email: tannamhai@gmail.com  - Website: mynghedaibai.com</h6>
+                        <h6>Tài khoản (A/C Bank number): 14023967248013 Chi nhánh TECHCOMBANK Q5</h6>
+
+
+                    </div>
+                </div>
+                <hr style="border-top: 1px dotted #8c8b8b;" />
+                <div class="row">
+
+                    <div class="col" style="text-align: center !important;position:relative;">
+                        <h4><b>HOÁ ĐƠN GIÁ TRỊ GIA TĂNG</b></h4>
+                        <h5> (VAT INVOICE)</h5>
+                        <h6>Ngày...Tháng...Năm...</h6>
+
+                        <div class="col-md-4 offset-md-8" style="position:absolute;top:0px;text-align: right;padding-right: 30px;">
+
+                            <h6>Mẫu số (Form): 01GTKT0/032</h6>
+                            <h6>Ký hiệu (Serial): AA/18E</h6>
+                            <h6>Số (No.): 0000036</h6>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <!--  <div class="row"> -->
+
+                  <div class="row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Họ tên người mua hàng (Buyer):</label>
+                    <div class="col-sm-9 border-bottom-content">
+                      <input type="text" class="form-control-plaintext" id="staticEmail" value="">
+                  </div>
+              </div>
+              <div class="row">
+                <label for="inputPassword" class="col-sm-3 col-form-label">Tên đơn vị (Company name):</label>
+                <div class="col-sm-9 border-bottom-content">
+                  <input type="text" class="form-control-plaintext" id="companyName" value="Công ty TNHH MTV TMDV PAVIETNAM">
+              </div>
+          </div>
+
+          <div class="row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">Địa chỉ (Address):</label>
+            <div class="col-sm-9 border-bottom-content">
+              <input type="text" class="form-control-plaintext" id="address" value="Lô BIV, CI-10, Khu công nghiệp Tân Hương, Xã Tân Hương, Huyện Châu Thành, Tỉnh Tiền Giang, Việt Nam">
+          </div>
+      </div>
+
+      <div class="row">
+        <label for="inputPassword" class="col-sm-3 col-form-label">Mã số thuế (Tax Code):</label>
+        <div class="col-sm-9 border-bottom-content">
+          <input type="text" disabled="true" class="form-control-plaintext word-spacing-text" id="address" value="6300251710">
+      </div>
+  </div>
+
+  <div class="row">
+
+
+    <label for="inputPassword" class="col-sm-3 col-form-label">Số tài khoản (A/C Bank number):</label>
+    <div class="col-sm-9 border-bottom-content">
+        <input type="text" class="form-control-plaintext" id="address" value="0095565644543">
+    </div>
+</div>
+
+<div class="row">
+    <label for="inputPassword" class="col-sm-3 col-form-label">Tại ngân hàng (Bank Name):</label>
+    <div class="col-sm-9 border-bottom-content">
+      <input type="text" class="form-control-plaintext" id="address" value="VietComBank Chi nhánh Trường Chinh, Quận Tân Bình, TP.HCM">
+  </div>
+</div>
+
+<div class="row">
+    <label for="inputPassword" class="col-sm-3 col-form-label">Hình thức thanh toán (Payment by):</label>
+    <div class="col-sm-3 border-bottom-content">
+      <input type="text" class="form-control-plaintext" id="address" value="CK/TM">
+  </div>
+</div>
+
+<div class="row" style="background-image:url('Temp1.png'); background-repeat: no-repeat; background-position: center;background-size: auto;margin-top: 20px;">
+    <div class="col">
+        <table class="table table-bordered">
+            <thead>
+                <tr style="text-align: center;">
+                    <th scope="col" style="width:35px">STT <br /> (No.)</th>
+                    <th scope="col">Tên hàng hóa, dịch vụ <br /> (Items description)</th>
+                    <th scope="col">Đơn vị tính<br /> (Unit)</th>
+                    <th scope="col">Số lượng<br /> (Quantity)</th>
+                    <th scope="col">Đơn giá<br /> (Price)</th>
+                    <th scope="col">Thành tiền<br /> (Amount)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">1</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">2</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">3</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">4</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">5</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">6</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">7</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">8</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">9</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">10</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="col-align-right-sum"><b>Cộng tiền hàng (Total Amount):</b></td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="col-align-right-sum"><b>Thuế suất GTGT (Tax Rate):</b> 10%</td>
+
+                    <td colspan="3" class="col-align-right-sum"><b>Tiền thuế GTGT (Total Tax):</b></td>
+
+                    <td class="col-align-right-sum">4.160.000</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="col-align-right-sum"><b>Tổng cộng tiền thanh toán (Invoice Total):</b></td>
+                    <td class="col-align-right-sum">45.600.000</td>
+                </tr>
+                <tr>
+
+                    <td colspan="2" class="col-align-right-sum" style="vertical-align: middle;"><b>Số tiền viết bằng chữ (Amount in word):</b></td>
+                    <td colspan="6">Chín mươi chín tỷ chín trăm chín mươi chín triệu chín trăm chín mươi chín nghìn đồng.</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div class="row" style="min-height: 200px;">
+    <div class="col form-align-center">
+        <b>Người mua hàng</b>
+        <small></small>
+    </div>
+    <div class="col form-align-center">
+        <b>Người bán hàng</b>
+        <small></small>
+    </div>
+</div>
+<div class="row" style="text-align: center;color: #d93025;">
+    <div class="col-12">
+        <span style="font-size: 0.7rem;">
+            <b>Đăng nhập tra cứu tại: https://hdgtgt.com/hd | Mã tra cứu: 999999999</b><br/>
+            <b>Cung cấp giải pháp hệ thống: Công ty TNHH MTV Quảng Cáo- Thương mại Nam Phuong - MST: 0309234853</b>
+        </span>
+    </div>
+</div>
+</div>
+<div class="container my-3 p-3 bg-white rounded shadow-sm">
+
+    <div class="row justify-content-center">
+        <div class="col-4">
+
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Hoá đơn chưa thanh toán</label>
+            </div>
+
+        </div>
+
+        <div class="col-8" style="text-align: right;">
+            <button type="button" class="btn btn-save-craft"><i class="fas fa-edit"></i> Cập nhật</button>
+            <button type="button" class="btn btn-accept" id="btn-check-tax"><i class="far fa-check-circle"></i> Kiểm tra ngày để phát hành</button>
+            <button type="button" class="btn btn-save-craft"><i class="fas fa-times"></i> Đóng lại</button>
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- modal hoa don ngoai cho duyet-->
+<div class="modal fade" id="exampleModalCenter_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg-custom" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" style="text-align: center;background-color: #2a26dd;padding: 20px 20px 5px 20px; color: #ffffff;">
+                        <h4><b>HOÁ ĐƠN MUA VÀO CHỜ DUYỆT</b></h4>
+                    </div>
+                </div>  
+            </div>
+            <div class="container" style="background-color: #FAE6E8; margin-bottom: 2cm; padding-top: 10px; padding-: 10px;">
+                <div class="row">
+                    <div class="col-2 img-logo-size" style="background-image:url('logo.jpg'); background-repeat: no-repeat;background-size: contain;background-position: top;"></div>
+                    <div class="col-10 content-hd">
+                        <h5>Công ty Cổ phần đầu tư công nghệ và thương mại SDS</h5>
+                        <h6>Mã số thuế (Tax Code): 0 1 0 5 9 8 7 4 3 2 - 9 9 9</h6>
+                        <h6>Địa chỉ (Address): Phòng 923, tòa nhà CT5, khu đô thị Sông Đà, Mễ Trì, Bắc Từ Liêm,
+                        Hà Nội</h6>
+                        <h6>Điện thoại (Tel): 0164397527  - Fax: 03513824988</h6>
+                        <h6>Email: tannamhai@gmail.com  - Website: mynghedaibai.com</h6>
+                        <h6>Tài khoản (A/C Bank number): 14023967248013 Chi nhánh TECHCOMBANK Q5</h6>
+
+
+                    </div>
+                </div>
+                <hr style="border-top: 1px dotted #8c8b8b;" />
+                <div class="row">
+
+                    <div class="col" style="text-align: center !important;position:relative;">
+                        <h4><b>HOÁ ĐƠN GIÁ TRỊ GIA TĂNG</b></h4>
+                        <h5> (VAT INVOICE)</h5>
+                        <h6>Ngày...Tháng...Năm...</h6>
+
+                        <div class="col-md-4 offset-md-8" style="position:absolute;top:0px;text-align: right;padding-right: 30px;">
+
+                            <h6>Mẫu số (Form): 01GTKT0/032</h6>
+                            <h6>Ký hiệu (Serial): AA/18E</h6>
+                            <h6>Số (No.): 0000036</h6>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <!--  <div class="row"> -->
+
+                  <div class="row">
+                    <label for="staticEmail" class="col-sm-3 col-form-label">Họ tên người mua hàng (Buyer):</label>
+                    <div class="col-sm-9 border-bottom-content">
+                      <input type="text" class="form-control-plaintext" id="staticEmail" value="">
+                  </div>
+              </div>
+              <div class="row">
+                <label for="inputPassword" class="col-sm-3 col-form-label">Tên đơn vị (Company name):</label>
+                <div class="col-sm-9 border-bottom-content">
+                  <input type="text" class="form-control-plaintext" id="companyName" value="Công ty TNHH MTV TMDV PAVIETNAM">
+              </div>
+          </div>
+
+          <div class="row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">Địa chỉ (Address):</label>
+            <div class="col-sm-9 border-bottom-content">
+              <input type="text" class="form-control-plaintext" id="address" value="Lô BIV, CI-10, Khu công nghiệp Tân Hương, Xã Tân Hương, Huyện Châu Thành, Tỉnh Tiền Giang, Việt Nam">
+          </div>
+      </div>
+
+      <div class="row">
+        <label for="inputPassword" class="col-sm-3 col-form-label">Mã số thuế (Tax Code):</label>
+        <div class="col-sm-9 border-bottom-content">
+          <input type="text" disabled="true" class="form-control-plaintext word-spacing-text" id="address" value="6300251710">
+      </div>
+  </div>
+
+  <div class="row">
+
+
+    <label for="inputPassword" class="col-sm-3 col-form-label">Số tài khoản (A/C Bank number):</label>
+    <div class="col-sm-9 border-bottom-content">
+        <input type="text" class="form-control-plaintext" id="address" value="0095565644543">
+    </div>
+</div>
+
+<div class="row">
+    <label for="inputPassword" class="col-sm-3 col-form-label">Tại ngân hàng (Bank Name):</label>
+    <div class="col-sm-9 border-bottom-content">
+      <input type="text" class="form-control-plaintext" id="address" value="VietComBank Chi nhánh Trường Chinh, Quận Tân Bình, TP.HCM">
+  </div>
+</div>
+
+<div class="row">
+    <label for="inputPassword" class="col-sm-3 col-form-label">Hình thức thanh toán (Payment by):</label>
+    <div class="col-sm-3 border-bottom-content">
+      <input type="text" class="form-control-plaintext" id="address" value="CK/TM">
+  </div>
+</div>
+
+<div class="row" style="background-image:url('Temp1.png'); background-repeat: no-repeat; background-position: center;background-size: auto;margin-top: 20px;">
+    <div class="col">
+        <table class="table table-bordered">
+            <thead>
+                <tr style="text-align: center;">
+                    <th scope="col" style="width:35px">STT <br /> (No.)</th>
+                    <th scope="col">Tên hàng hóa, dịch vụ <br /> (Items description)</th>
+                    <th scope="col">Đơn vị tính<br /> (Unit)</th>
+                    <th scope="col">Số lượng<br /> (Quantity)</th>
+                    <th scope="col">Đơn giá<br /> (Price)</th>
+                    <th scope="col">Thành tiền<br /> (Amount)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">1</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">2</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">3</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">4</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">5</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">6</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width:35px">7</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">8</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">9</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="form-align-center col-identify" style="width: 35px">10</th>
+                    <td>Từ Trung Hòa đến Công ty Dụ Đức</td>
+                    <td class="form-align-center">Chiếc</td>
+                    <td class="form-align-center">2</td>
+                    <td class="col-align-right-sum">20.800.000</td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="col-align-right-sum"><b>Cộng tiền hàng (Total Amount):</b></td>
+                    <td class="col-align-right-sum">41.600.000</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="col-align-right-sum"><b>Thuế suất GTGT (Tax Rate):</b> 10%</td>
+
+                    <td colspan="3" class="col-align-right-sum"><b>Tiền thuế GTGT (Total Tax):</b></td>
+
+                    <td class="col-align-right-sum">4.160.000</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="col-align-right-sum"><b>Tổng cộng tiền thanh toán (Invoice Total):</b></td>
+                    <td class="col-align-right-sum">45.600.000</td>
+                </tr>
+                <tr>
+
+                    <td colspan="2" class="col-align-right-sum" style="vertical-align: middle;"><b>Số tiền viết bằng chữ (Amount in word):</b></td>
+                    <td colspan="6">Chín mươi chín tỷ chín trăm chín mươi chín triệu chín trăm chín mươi chín nghìn đồng.</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div class="row" style="min-height: 200px;">
+    <div class="col form-align-center">
+        <b>Người mua hàng</b>
+        <small></small>
+    </div>
+    <div class="col form-align-center">
+        <b>Người bán hàng</b>
+        <small></small>
+    </div>
+</div>
+<div class="row" style="text-align: center;color: #d93025;">
+     <div class="col-12">
+        <span style="font-size: 0.7rem;">
+            <b>Đăng nhập tra cứu tại: https://hdgtgt.com/hd | Mã tra cứu: 999999999</b><br>
+            <b>Cung cấp giải pháp hệ thống: Công ty TNHH MTV Quảng Cáo- Thương mại Nam Phuong - MST: 0309234853</b>
+        </span>
+    </div>
+</div>
+</div>
+<div class="container my-3 p-3 bg-white rounded shadow-sm">
+
+    <div class="row justify-content-center">
+        <div class="col-4">
+
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Hoá đơn chưa thanh toán</label>
+            </div>
+
+        </div>
+
+        <div class="col-8" style="text-align: right;">
+            <button type="button" class="btn btn-save-craft" data-toggle="modal" data-target="#exampleModal_CancelTax"><i class="fas fa-edit"></i>  Yêu cầu sửa hóa đơn</button>
+            <button type="button" class="btn btn-accept" id="btn-check-tax"><i class="fas fa-check-double"></i> Chấp nhận</button>
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Modal thong tin yeu cau ve hoa don-->
+<div class="modal fade" id="exampleModal_CancelTax" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="exampleModalLabel"><b>THÔNG TIN YÊU CẦU ĐIỀU CHỈNH</b></h6>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Nhập nội dung cần điều chỉnh" rows="3"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-accept">Gửi yêu cầu</button>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Kiem tra ngay phat hanh hoa don -->
+<div class="modal fade" id="exampleModal_CheckTax" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="exampleModalLabel"><b>KIỂM TRA NGÀY PHÁT HÀNH HOÁ ĐƠN</b></h6>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+    <div class="modal-body">
+
+
+       <table class="table table-bordered">
+        <label class="form-check-label" for="exampleCheck1"><b>Hoá đơn liền kề trước đó:</b></label>
+        <thead>
+            <tr style="text-align: center;">
+                <th scope="col">Ngày đã phát hành</th>
+                <th scope="col">Mã tra cứu</th>
+                <th scope="col">Số hoá đơn</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="form-align-center">25/02/2019</td>
+                <td class="form-align-center">585555555XXX000</td>
+                <td class="form-align-center">0000067</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <label class="form-check-label" for="exampleCheck1"><b>Số hoá đơn phát hành hiện tại: <span style="color: #b92b27;">0000068</span></b></label>
+    <form class="form-inline" style="margin-top:20px;">
+       <label>Ngày cần phát hành: </label>
+       <div class="form-group mx-sm-3 mb-2">
+
+        <input type="text" class="form-control-plaintext" id="inputPassword2" placeholder="DD/MM/YYYY">
+    </div>
+    <button type="button" class="btn btn-accept" data-toggle="modal" data-target="#comfirmVAT"><i class="fas fa-box"></i> Phát hành</button>
+</form>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- Comfirm Replease VAT -->
+<div class="modal fade" id="comfirmVAT" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLabel"><b>XÁC NHẬN PHÁT HÀNH HOÁ ĐƠN</b></h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <span style="color: #b92b27 !important; font-weight: bold;">Bạn có chắc chắn phát hành hoá đơn này không ? </span>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+    <button type="button" class="btn btn-accept">Đồng ý phát hành</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Messenger -->
+<div class="modal fade" id="messenger" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLabel"><b>THÔNG BÁO TỪ KHÁCH HÀNG</b></h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+    <div class="container">
+        <span class="time-right" style="font-weight: bold; color: #b92b27;">ATTVN | 12/02/2019 11:02</span>
+        <p>Tôi muốn bỏ giá trị tấm kim loại được không ? không cần xuất hoá đơn cho kim loại</p>
+  </div>
+<hr/>
+  <div class="container">
+      <span style="font-weight: bold; color: #b92b27;">KGC | 12/02/2019 11:02</span>
+      <p>Dạ, được ạ, để em xuất lại cho a, và gửi lại cho a kiểm tra nhé.</p>
+  </div>
+<hr/>
+  <div class="container">
+      <span class="time-right" style="font-weight: bold; color: #b92b27;">ATTVN | 12/02/2019 11:02</span>
+      <p>OK, Thanks em.</p>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"><b>Gửi tin nhắn cho khách hàng:</b></label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+    <button type="button" class="btn btn-accept">Gửi tin nhắn</button>
+</div>
+</div>
+</div>
+</div>
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>
+        <script src="https://getbootstrap.com/docs/4.1/examples/offcanvas/offcanvas.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript">
+            $('#btn-check-tax').click(function(){
+                $('#exampleModal_CheckTax').modal({show:true})
+            });
+        </script>
+    </body>
+    </html>
