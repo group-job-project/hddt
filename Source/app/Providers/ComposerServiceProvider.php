@@ -13,24 +13,24 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->ComposerMenus();
-        $this->ComposerMenusTop();
+        $this->ComposerNavigationMenu();
+        $this->ComposerNavigationMenuHeader();
     }
 
     /**
      * Composer Navigation
      */
-    public function ComposerMenus()
+    public function ComposerNavigationMenu()
     {
-        view()->composer('layouts.partials.nav_menu', 'App\Http\ViewComposers\NavigationComposer');
+        view()->composer('layouts.partials.nav_menu', 'App\Http\ViewComposers\NavigationMenuComposer');
     }
 
     /**
      * Composer Navigation Top
      */
-    public function ComposerMenusTop()
+    public function ComposerNavigationMenuHeader()
     {
-        view()->composer('layouts.partials.nav_header', 'App\Http\ViewComposers\NavigationTopComposer');
+        view()->composer('layouts.partials.nav_header', 'App\Http\ViewComposers\NavigationMenuHeaderComposer');
     }
 
     /**

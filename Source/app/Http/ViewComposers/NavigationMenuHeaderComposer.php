@@ -5,7 +5,7 @@ use Illuminate\View\View;
 use App\Http\BusinessLogic\NavigationMenu;
 use Illuminate\Support\Collection;
 
-class NavigationTopComposer
+class NavigationMenuHeaderComposer
 {
 
     /**
@@ -16,7 +16,7 @@ class NavigationTopComposer
     public function compose(View $view)
     {
         $nav_menu = new NavigationMenu();
-        $menus = $nav_menu->loadMenuHeader(100, "0", "0");
+        $menus = $nav_menu->loadMenus(100, "0", "0");
         $collections = new Collection();
         $collections->push($menus);
         $view->with('nav_header', $collections[0]);
