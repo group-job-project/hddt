@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +15,8 @@ Route::get('/', function () {
 });
 
 Route::get('/invoices','Controller@invoices');
+
+/**
+ * Create Invoice
+ */
+Route::get('/lap-hoa-don','Invoices\InvoiceController@invoices');
