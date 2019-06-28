@@ -8,18 +8,21 @@
 		<div class="jumbotron-custom jumbotron-fluid">
 			
 				<h2 class="display-4">TÌM THEO MÃ SỐ THUẾ DOANH NGHIỆP</h2>
+			<form >
 				<div class="row">
 					<div class="col-4">
 						<input type="text" class="form-control-custom size-text-id"
-							id="exampleFormControlInput1">
+							id="txt_tax_code" value="6300251710">
 					</div>
 					<div class="col-2">
-						<button type="submit" class="btn btn-save-craft">
+
+						<button type="submit" id="btn-find-by-tax-code" class="btn btn-save-craft">
 							<i class="fas fa-search"></i> Truy xuất thông tin
 						</button>
 					</div>
 
 				</div>
+			</form>
 			
 		</div>
 		<div class="my-3 p-3 bg-white rounded shadow-sm">
@@ -36,44 +39,33 @@
 								thuế <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-9">
-								<span class="badge badge-primary">0</span> <span
-									class="badge badge-primary">3</span> <span
-									class="badge badge-primary">0</span> <span
-									class="badge badge-primary">2</span> <span
-									class="badge badge-primary">6</span> <span
-									class="badge badge-primary">0</span> <span
-									class="badge badge-primary">1</span> <span
-									class="badge badge-primary">9</span> <span
-									class="badge badge-primary">4</span> <span
-									class="badge badge-primary">5</span>
+								<input type="text" readonly="true" class="form-control-plaintext"
+									   id="view_tax_code">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-3 col-form-label">Họ tên
-								người mua hàng (Buyer)</label>
+							<label for="staticEmail" class="col-sm-3 col-form-label">Người mua hàng</label>
 							<div class="col-sm-9">
 								<input type="text" readonly="" class="form-control-plaintext"
-									id="staticEmail" value="">
+									id="view_buyer_name" value="">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-3 col-form-label">Tên
-								Doanh nghiệp (Company Name) <span style="color: red;">*</span>
+							<label for="staticEmail" class="col-sm-3 col-form-label">Tên Doanh Nghiệp <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-9">
 								<input type="text" readonly="false"
-									class="form-control-plaintext" id="staticEmail"
-									value="Công ty TNHH Dịch Vụ - Thương Mại A.T&amp;T">
+									class="form-control-plaintext" id="view_company_name"
+									value="">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-3 col-form-label">Địa chỉ
-								(Address) <span style="color: red;">*</span>
+							<label for="staticEmail" class="col-sm-3 col-form-label">Địa chỉ <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control-plaintext"
-									id="staticEmail"
-									value="285 Lô 99 Cách Mạng Tháng Tám, Phường 12, Q.10">
+									id="view_address"
+									value="">
 							</div>
 						</div>
 						<div class="form-group row">
@@ -81,21 +73,21 @@
 								phố <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-3">
-								<select class="form-control-plaintext" id="inputGroupSelect01">
-									<option selected>TP.Hồ Chí Minh</option>
-									<option value="1">TP.Hà Nội</option>
-									<option value="2">TP.Cần Thơ</option>
-									<option value="3">TP.Cà Mau</option>
+								<select class="form-control-plaintext" id="view_city">
+									<option value="-1">Chọn Thành Phố</option>
+									<option value="TP.HCM">TP.Hồ Chí Minh</option>
+									<option value="TP.HA NOI">TP.Hà Nội</option>
+									<option value="TP.CAN THO">TP.Cần Thơ</option>
+									<option value="TP.CA MAU">TP.Cà Mau</option>
 								</select>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-3 col-form-label">Điện
-								thoại (Tel) <span style="color: red;">*</span>
+							<label for="staticEmail" class="col-sm-3 col-form-label">Điện thoại <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-9">
 								<input type="text" readonly="" class="form-control-plaintext"
-									id="staticEmail" value="+84 (028) 38634980">
+									id="view_telephone" />
 							</div>
 						</div>
 						<div class="form-group row">
@@ -103,24 +95,22 @@
 								style="color: red;">*</span></label>
 							<div class="col-sm-9">
 								<input type="text" readonly="" class="form-control-plaintext"
-									id="staticEmail" value="info@attvn.vn">
+									id="view_email">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-3 col-form-label">Số TK
-								ngân hàng (A/C Bank Number)</label>
+							<label for="staticEmail" class="col-sm-3 col-form-label">Số TK Ngân Hàng</label>
 							<div class="col-sm-9">
 								<input type="text" readonly="" class="form-control-plaintext"
-									id="staticEmail" value="">
+									id="view_account_bank">
 							</div>
 						</div>
 
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-3 col-form-label">Tên ngân
-								hàng (A/C Bank Name)</label>
+							<label for="staticEmail" class="col-sm-3 col-form-label">Tên Ngân Hàng</label>
 							<div class="col-sm-9">
 								<input type="text" readonly="" class="form-control-plaintext"
-									id="staticEmail" value="">
+									id="view_bank_name" value="">
 							</div>
 						</div>
 					</form>
@@ -180,7 +170,30 @@
 				</div>
 			</div>
 		</div>
-
-
 	</div>
+
+	<!-- Information error -->
+	<div id="dialog" title="Thông báo lỗi">
+		<p>Không tìm thấy mã số thuế của doanh nghiệp trong hệ thống.</p>
+	</div>
+@endsection
+@section("javascript")
+
+
+	<script type="text/javascript" src="{{ asset('assets/invoices/invoice.js') }}"></script>
+	<script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $("#btn-find-by-tax-code").click(function(e) {
+            e.preventDefault();
+            var tax_code = $("#txt_tax_code").val();
+			invoice.findByTaxCode(tax_code);
+        });
+
+	</script>
+
 @endsection

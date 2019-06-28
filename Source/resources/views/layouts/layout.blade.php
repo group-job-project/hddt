@@ -12,8 +12,13 @@
     <link href="{{ asset('assets/fontawesome/css/all.css') }}" rel="stylesheet">
     <!-- OUS CSS -->
     <link href="{{ asset('assets/config/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Title page -->
     <title>@yield('title')</title>
+    <!--  Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+
 </head>
 <body class="bg-light">
 @include('layouts/partials/nav_header')
@@ -30,5 +35,9 @@
 <script type="text/javascript" src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- Moment JavaScript -->
 <script type="text/javascript" src="{{ asset('assets/moment/moment.min.js') }}"></script>
+<!-- Jquery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+@yield("javascript")
 </body>
 </html>

@@ -19,4 +19,5 @@ Route::get('/invoices','Controller@invoices');
 /**
  * Create Invoice
  */
-Route::get('/lap-hoa-don','Invoices\InvoiceController@invoices');
+Route::get('/lap-hoa-don', 'Invoices\InvoiceController@getInvoice');
+Route::post('/lap-hoa-don','Invoices\InvoiceController@findByInvoiceId');
