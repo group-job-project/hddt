@@ -25,4 +25,37 @@ class Invoices {
 
         return $findTaxCode;
     }
+
+    /**
+     * Update information company
+     */
+    public function updateInformationCompany($data) {
+
+        $taxcode = $data.tax_code;
+        $accountid = $data.account_id;
+        $buyername = $data.buyer_name;
+        $compname = $data.company_name;
+        $address = $data.address;
+        $city = $data.city;
+        $telphone = $data.tel_phone;
+        $email = $data.email;
+        $bankaccount = $data.bank_account;
+        $bankname = $data.bank_name;
+
+        $updInfor = DB::select("CALL UPDATE_COMPANY_INFOMATION(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            array(
+                $taxcode,
+                $accountid,
+                $buyername,
+                $compname,
+                $address,
+                $city,
+                $telphone,
+                $email,
+                $bankaccount,
+                $bankname
+            ));
+
+        return $updInfor;
+    }
 }

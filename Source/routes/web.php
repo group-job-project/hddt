@@ -21,3 +21,4 @@ Route::get('/invoices','Controller@invoices');
  */
 Route::get('/lap-hoa-don', 'Invoices\InvoiceController@getInvoice');
 Route::post('/lap-hoa-don','Invoices\InvoiceController@findByInvoiceId');
+Route::put('/lap-hoa-don','Invoices\InvoiceController@updInformationCompany');
