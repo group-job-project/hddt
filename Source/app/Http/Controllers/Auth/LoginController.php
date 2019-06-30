@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -35,5 +37,23 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function getLogin() {
+        return view('auth.pages.login');
+    }
+
+    public function postLogin(Request $request) {
+        if (Auth::guard('web')->attempt(['tax_code' => $request->taxcode, 'pass_word' => $request->password])) {
+            echo "success";
+            return;
+            $details = Auth::guard('web')->user();
+            $user = $details['original'];
+            // return $user;
+            return redirect()->intended('/');
+        }
+        echo "ERROR";
+        return;
+        return redirect()->back()->WithErrors('ERROR');
     }
 }

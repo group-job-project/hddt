@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -68,5 +71,23 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function getRegister() {
+        return view('auth.pages.register');
+    }
+
+    public function postRegister(Request $request) {
+        DB::table('accounts')->insertGetId(
+            [
+                'acc_name'=>$request->taxcode,
+                'tax_code'=>$request->taxcode,
+                'role_id'=>100,
+                'acc_active'=>0,
+                'created_date'=>Date::now(),
+                'pass_word'=>bcrypt($request->password),
+            ]
+        );
+        return redirect('dang-nhap');
     }
 }

@@ -16,3 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/invoices','Controller@invoices');
+
+Route::get('/dang-nhap','Auth\LoginController@getLogin');
+
+Route::post('/dang-nhap','Auth\LoginController@postLogin');
+
+Route::get('/dang-ky','Auth\RegisterController@getRegister');
+
+Route::post('/dang-ky','Auth\RegisterController@postRegister');
