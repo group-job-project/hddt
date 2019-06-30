@@ -85,7 +85,7 @@ class RegisterController extends Controller
                 'role_id'=>100,
                 'acc_active'=>0,
                 'created_date'=>Date::now(),
-                'pass_word'=>bcrypt($request->password),
+                'pass_word'=>Hash::make($request->password),
             ]
         );
         return redirect('dang-nhap');
