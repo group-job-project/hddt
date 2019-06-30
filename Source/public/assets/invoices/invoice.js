@@ -7,6 +7,8 @@
 var invoice = {
 
     url: "/thueso/Source/public/lap-hoa-don",
+    title_info: "Thông báo",
+    title_error: "Thông báo lỗi",
 
     /**
      * Push data to controller
@@ -23,24 +25,21 @@ var invoice = {
                 }
                 catch (e) {
                     invoice.clear_form();
-                    invoice.error_message(taxcode, 500);
+                    invoice.error_message(taxcode, "find", invoice.title_error);
                 }
             }
         });
     },
 
     update_company_information: function(data) {
-        console.log(data);
-
         $.ajax({
             type:'PUT',
             url: invoice.url,
             data:{'data': data},
             success:function(data) {
-                console.log(data.success);
+                invoice.error_message(data, "update", invoice.title_info);
             }
         });
-
     },
 
     /**
@@ -80,16 +79,34 @@ var invoice = {
      * Error message
      *
      * @param content
-     * @param duration
+     * @param active
+     * @param title
      */
-    error_message: function (content, duration) {
+    error_message: function (content, active, title) {
 
-        let dialog_message = $('<div class="dialog-message" style="color: red;" title="Thông báo lỗi"></div>');
-        if (content == "") {
+        let dialog_message = $('<div class="dialog-message" style="color: red;" title="'+ title +'"></div>');
+
+        if (content == "" && active == 'find') {
             dialog_message.append("Vui lòng nhập mã số thuế.");
-        } else {
+        }
+        if (content != "" && active == 'find') {
             dialog_message.append("Mã số thuế ".concat(content, " không tìm thấy trong hệ thống. Hãy tiến hành thêm mới."));
         }
+        if (content != "" && active == 'update') {
+            dialog_message.append("Cập nhật thông tin thành công.");
+        }
+
+        return invoice.dialog_func(dialog_message, 1000);
+    },
+
+    /**
+     * Common dialog message
+     *
+     * @param dialog_message
+     * @param duration
+     */
+    dialog_func:function (dialog_message, duration) {
+
         dialog_message.dialog({
             modal: true,
             show: {

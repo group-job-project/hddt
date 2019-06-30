@@ -48,9 +48,29 @@ class InvoiceController extends Controller
      */
     public function updInformationCompany(Request $request) {
 
-        $data = $request->all();
+        $taxcode = $request->input('data.tax_code');
+        $accountid = $request->input('data.account_id');
+        $buyername = $request->input('data.buyer_name');
+        $compname = $request->input('data.company_name');
+        $address = $request->input('data.address');
+        $city = $request->input('data.city');
+        $telphone = $request->input('data.tel_phone');
+        $email = $request->input('data.email');
+        $bankaccount = $request->input('data.bank_account');
+        $bankname = $request->input('data.bank_name');
 
-        $updInforComp = $this->getInstance()->updateInformationCompany($data);
-        return response()->json(['success'=> $data]);
+        $updInforComp = $this->getInstance()->updateInformationCompany(
+            $taxcode,
+            $accountid,
+            $buyername,
+            $compname,
+            $address,
+            $city,
+            $telphone,
+            $email,
+            $bankaccount,
+            $bankname
+            );
+        return response()->json(['success'=> "OK"]);
     }
 }

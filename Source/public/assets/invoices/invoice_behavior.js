@@ -12,7 +12,8 @@ $("#btn-find-by-tax-code").click(function(e) {
     var tax_code = $("#txt_tax_code").val();
 
     if (tax_code == "") {
-        invoice.error_message(tax_code, 1000);
+        invoice.error_message(tax_code, "find", invoice.title_error);
+        invoice.clear_form();
         return;
     }
 
@@ -21,7 +22,11 @@ $("#btn-find-by-tax-code").click(function(e) {
 
 $("#btn_update_information").click(function (e) {
 
-    var accountid = 109;
+    // stop mutiple click event
+    e.stopImmediatePropagation();
+    e.preventDefault();
+
+    var accountid = 100;
     var upd_tax_code = $("#view_tax_code").val();
     var upd_buyer_name = $("#view_buyer_name").val();
     var upd_comp_name = $("#view_company_name").val();

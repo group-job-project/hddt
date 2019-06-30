@@ -12,7 +12,7 @@
 				<div class="row">
 					<div class="col-4">
 						<input type="text" class="form-control-custom size-text-id"
-							id="txt_tax_code" value="">
+							id="txt_tax_code" value="6300251710">
 					</div>
 					<div class="col-2">
 
@@ -46,7 +46,7 @@
 						<div class="form-group row">
 							<label for="staticEmail" class="col-sm-2 col-form-label">Người mua hàng</label>
 							<div class="col-sm-9">
-								<input type="text" readonly="" class="form-control-plaintext"
+								<input type="text" class="form-control-plaintext"
 									id="view_buyer_name" value="">
 							</div>
 						</div>
@@ -54,13 +54,13 @@
 							<label for="staticEmail" class="col-sm-2 col-form-label">Tên Doanh Nghiệp <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-9">
-								<input type="text" readonly="false"
+								<input type="text"
 									class="form-control-plaintext" id="view_company_name"
 									value="">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-2 col-form-label">Địa chỉ <span style="color: red;">*</span>
+							<label class="col-sm-2 col-form-label">Địa chỉ <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control-plaintext"
@@ -69,7 +69,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-2 col-form-label">Tỉnh/Thành
+							<label class="col-sm-2 col-form-label">Tỉnh/Thành
 								phố <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-3">
@@ -83,25 +83,25 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-2 col-form-label">Điện thoại <span style="color: red;">*</span>
+							<label class="col-sm-2 col-form-label">Điện thoại <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-9">
-								<input type="text" readonly="" class="form-control-plaintext"
+								<input type="text" class="form-control-plaintext"
 									id="view_telephone" />
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-2 col-form-label">Email <span
+							<label class="col-sm-2 col-form-label">Email <span
 								style="color: red;">*</span></label>
 							<div class="col-sm-9">
-								<input type="text" readonly="" class="form-control-plaintext"
+								<input type="text" class="form-control-plaintext"
 									id="view_email">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="staticEmail" class="col-sm-2 col-form-label">Số TK Ngân Hàng</label>
+							<label class="col-sm-2 col-form-label">Số TK Ngân Hàng</label>
 							<div class="col-sm-9">
-								<input type="text" readonly="" class="form-control-plaintext"
+								<input type="text" class="form-control-plaintext"
 									id="view_account_bank">
 							</div>
 						</div>
@@ -109,7 +109,7 @@
 						<div class="form-group row">
 							<label for="staticEmail" class="col-sm-2 col-form-label">Tên Ngân Hàng</label>
 							<div class="col-sm-9">
-								<input type="text" readonly="" class="form-control-plaintext"
+								<input type="text" class="form-control-plaintext"
 									id="view_bank_name" value="">
 							</div>
 						</div>
