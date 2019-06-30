@@ -39,12 +39,22 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function tax_code()
+    {
+        return 'tax_code';
+    }
+
     public function getLogin() {
         return view('auth.pages.login');
     }
 
     public function postLogin(Request $request) {
-        if (Auth::guard('web')->attempt(['tax_code' => $request->taxcode, 'pass_word' => $request->password])) {
+        if (Auth::guard('web')->attempt(['tax_code' => $request->taxcode, 'password' => $request->password])) {
             echo "success";
             return;
             $details = Auth::guard('web')->user();

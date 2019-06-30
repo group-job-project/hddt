@@ -38,4 +38,14 @@ class User extends Authenticatable
     ];
 
     protected $table = 'accounts';
+
+    /**
+     * Get the password for the user.
+     *
+     * @return string
+     */
+    public function getAuthPassword()
+    {
+        return $this->pass_word;
+    }
 }
