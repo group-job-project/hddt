@@ -11,7 +11,7 @@
  Target Server Version : 100140
  File Encoding         : 65001
 
- Date: 20/06/2019 21:32:28
+ Date: 01/07/2019 02:58:46
 */
 
 SET NAMES utf8mb4;
@@ -65,7 +65,7 @@ CREATE TABLE `accounts`  (
   PRIMARY KEY (`acc_id`) USING BTREE,
   INDEX `accounts_fk`(`role_id`) USING BTREE,
   CONSTRAINT `accounts_fk` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 109 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 110 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of accounts
@@ -79,6 +79,7 @@ INSERT INTO `accounts` VALUES (105, 'NGUYỄN VĂN B', '111111', 100, b'0', '201
 INSERT INTO `accounts` VALUES (106, 'NGUYỄN VĂN C', '111111', 100, b'0', '2019-06-04 00:00:00', NULL, NULL, '');
 INSERT INTO `accounts` VALUES (107, 'NGUYỄN VĂN D', '111111', 100, b'0', '2019-06-04 00:00:00', NULL, NULL, '');
 INSERT INTO `accounts` VALUES (108, 'NGUYỄN VĂN E', '111111', 100, b'0', '2019-06-04 00:00:00', NULL, NULL, '');
+INSERT INTO `accounts` VALUES (109, 'NGUYỄN VĂN E', '111111', 100, b'0', '2019-06-04 00:00:00', NULL, NULL, '');
 
 -- ----------------------------
 -- Table structure for company_information
@@ -86,6 +87,7 @@ INSERT INTO `accounts` VALUES (108, 'NGUYỄN VĂN E', '111111', 100, b'0', '201
 DROP TABLE IF EXISTS `company_information`;
 CREATE TABLE `company_information`  (
   `comp_id` int(11) NOT NULL AUTO_INCREMENT,
+  `buyer_name` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   `comp_name` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `comp_address` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `comp_tax_code` varchar(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -106,17 +108,19 @@ CREATE TABLE `company_information`  (
   PRIMARY KEY (`comp_id`) USING BTREE,
   INDEX `company_information_fk`(`acc_id`) USING BTREE,
   CONSTRAINT `company_information_fk` FOREIGN KEY (`acc_id`) REFERENCES `accounts` (`acc_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 106 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 109 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of company_information
 -- ----------------------------
-INSERT INTO `company_information` VALUES (100, 'CÔNG TY CỔ PHẦN ĐỊA ỐC KHÁNH XUÂN', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251710', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 100, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
-INSERT INTO `company_information` VALUES (101, 'CÔNG TY CỔ PHẦN ATT&T', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251710', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 101, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
-INSERT INTO `company_information` VALUES (102, 'CÔNG TY CỔ PHẦN ĐỊA ỐC MỸ NHÂN', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251710', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 102, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
-INSERT INTO `company_information` VALUES (103, 'CÔNG TY CỔ PHẦN ĐỊA ỐC MỸ NAM', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251710', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 103, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
-INSERT INTO `company_information` VALUES (104, 'CÔNG TY CỔ PHẦN ĐỊA ỐC DƯƠNG VẬT', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251710', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 104, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
-INSERT INTO `company_information` VALUES (105, 'CÔNG TY CỔ PHẦN ĐỊA ỐC KHÁNH NAM', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251710', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 105, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
+INSERT INTO `company_information` VALUES (100, 'Phạm Thanh Quang', 'CÔNG TY CỔ PHẦN ĐỊA ỐC KHÁNH XUÂN', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251710', 'TP.CAN THO', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 100, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
+INSERT INTO `company_information` VALUES (101, 'Hà Anh Tuấn', 'CÔNG TY CỔ PHẦN ATT&T', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251711', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 101, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
+INSERT INTO `company_information` VALUES (102, 'Nguyễn Thị Bình An', 'CÔNG TY CỔ PHẦN ĐỊA ỐC MỸ NHÂN', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251712', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 102, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
+INSERT INTO `company_information` VALUES (103, 'Đinh Nho Thành', 'CÔNG TY CỔ PHẦN ĐỊA ỐC MỸ NAM', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251713', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 103, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
+INSERT INTO `company_information` VALUES (104, 'Phạm Thúy Kiều', 'CÔNG TY CỔ PHẦN ĐỊA ỐC DƯƠNG VẬT', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251714', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 104, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
+INSERT INTO `company_information` VALUES (105, 'Hà Bạch Ngạn', 'CÔNG TY CỔ PHẦN ĐỊA ỐC KHÁNH NAM', '163 - 165 TRẦN QUỐC THẢO, PHƯỜNG 11, QUẬN 3', '6300251715', 'TP.HCM', '09555555', '9566666', '0941415514', 'PTQUANG0968@GMAIL.COM', 'THUESO.COM', '1111111111111', 'VIETCOMBANK', '2019-06-04 00:00:00', NULL, NULL, 105, 'a.PNG', 'CHI NHÁNH ĐỒNG ĐEN, QUẬN 3');
+INSERT INTO `company_information` VALUES (106, 'Pham Thanh Quang', 'Công ty TNHH Xây Dựng Minh Phú 2', 'Số 25, Trần Hưng Đạo, TP.Vị Thanh', '6300251110', 'Tỉnh Hậu Giang', '0941415513', NULL, '', 'ptquang0905@gmail.com', NULL, '000000000345', 'VietinBank', '0000-00-00 00:00:00', NULL, NULL, 108, NULL, NULL);
+INSERT INTO `company_information` VALUES (108, 'Quang', 'Công ty TNHH Xây Dựng Hà Anh 06', '130, Ha Noi', '1800565956', 'TP.HA NOI', '089555563', NULL, '', 'ptquang0968@gmail.com', NULL, '', '', '0000-00-00 00:00:00', NULL, NULL, 109, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for history_account
@@ -618,7 +622,7 @@ CREATE TABLE `sub_menu_navigation`  (
 -- ----------------------------
 -- Records of sub_menu_navigation
 -- ----------------------------
-INSERT INTO `sub_menu_navigation` VALUES (100, 100, 'Lập hóa đơn', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/', '0');
+INSERT INTO `sub_menu_navigation` VALUES (100, 100, 'Lập hóa đơn', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'lap-hoa-don', 'LẬP HÓA ĐƠN', '/', '0');
 INSERT INTO `sub_menu_navigation` VALUES (101, 100, 'Hóa đơn lưu tạm', 0, 2, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test', '0');
 INSERT INTO `sub_menu_navigation` VALUES (102, 100, 'Hóa đơn chờ duyệt', 0, 3, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
 INSERT INTO `sub_menu_navigation` VALUES (103, 104, 'Hóa đơn phải khai thuế trong kỳ', 0, 1, '2019-06-04 00:00:00', NULL, NULL, 'CI.ICO', 'thueso.com', 'LẬP HÓA ĐƠN', '/test01', '0');
@@ -726,6 +730,33 @@ INSERT INTO `template_invoice` VALUES (159, 'MAU 003', 'ABC.PNG', 'CENTER', 'CEN
 INSERT INTO `template_invoice` VALUES (160, 'MAU 003', 'ABC.PNG', 'CENTER', 'CENTER', 'BAC.PNG', 100, '1', '2019-06-04 00:00:00', NULL, NULL, '100100100100100');
 
 -- ----------------------------
+-- Procedure structure for FIND_BY_TAX_CODE
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `FIND_BY_TAX_CODE`;
+delimiter ;;
+CREATE PROCEDURE `FIND_BY_TAX_CODE`(IN `taxcode` VARCHAR ( 15 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci)
+  COMMENT 'Find by tax code'
+BEGIN
+	SELECT
+		buyer_name AS buyer_name,
+		company_information.comp_name AS company_name,
+		company_information.comp_address AS company_address,
+		company_information.comp_tax_code AS company_tax_code,
+		company_information.comp_city AS company_city,
+		company_information.comp_tel_phone AS company_phone,
+		company_information.comp_fax AS company_fax,
+		company_information.comp_mobile_phone AS company_mobile,
+		company_information.comp_email AS company_email,
+		company_information.comp_website AS company_website,
+		company_information.comp_bank_account AS company_bank_account,
+		company_information.comp_bank_name AS company_bank_name 
+	FROM
+	company_information where comp_tax_code = taxcode;
+END
+;;
+delimiter ;
+
+-- ----------------------------
 -- Procedure structure for MENU_TOP
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `MENU_TOP`;
@@ -756,6 +787,66 @@ BEGIN
 		MENU.menu_id ASC,
 		MENU.menu_sort ASC,
 		SUB_MENU.sub_menu_sort ASC;
+
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for UPDATE_COMPANY_INFOMATION
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `UPDATE_COMPANY_INFOMATION`;
+delimiter ;;
+CREATE PROCEDURE `UPDATE_COMPANY_INFOMATION`(IN `taxcode` VARCHAR ( 15 ) CHARACTER 
+	SET utf8 COLLATE utf8_unicode_ci,
+	IN `accountid` INT,
+	IN `buyername` VARCHAR ( 150 ) CHARACTER 
+	SET utf8 COLLATE utf8_unicode_ci,
+	IN `compname` VARCHAR ( 150 ) CHARACTER 
+	SET utf8 COLLATE utf8_unicode_ci,
+	IN `address` VARCHAR ( 150 ) CHARACTER 
+	SET utf8 COLLATE utf8_unicode_ci,
+	IN `city` VARCHAR ( 15 ) CHARACTER 
+	SET utf8 COLLATE utf8_unicode_ci,
+	IN `telphone` VARCHAR ( 15 ) CHARACTER 
+	SET utf8 COLLATE utf8_unicode_ci,
+	IN `email` VARCHAR ( 50 ) CHARACTER 
+	SET utf8 COLLATE utf8_unicode_ci,
+	IN `bankaccount` VARCHAR ( 25 ) CHARACTER 
+	SET utf8 COLLATE utf8_unicode_ci,
+	IN `bankname` VARCHAR ( 50 ) CHARACTER 
+	SET utf8 COLLATE utf8_unicode_ci)
+  COMMENT 'Update information company by tax code'
+BEGIN
+	DECLARE
+		count INT;
+	SELECT
+		COUNT( comp_tax_code ) INTO count 
+	FROM
+		company_information 
+	WHERE
+		comp_tax_code = taxcode;
+	IF
+		count > 0 THEN
+			UPDATE company_information 
+			SET
+			buyer_name = buyername,
+			comp_name = compname,
+			comp_address = address,
+			comp_city = city,
+			comp_tel_phone = telphone,
+			comp_email = email,
+			comp_bank_account = bankaccount,
+			comp_bank_name = bankname 
+		WHERE
+			comp_tax_code = taxcode 
+			AND acc_id = accountid;
+		ELSE 
+		INSERT INTO company_information ( comp_tax_code, buyer_name, comp_name, comp_address, comp_city, comp_tel_phone, comp_email, comp_bank_account, comp_bank_name, acc_id )
+		VALUES
+			( taxcode, buyername, compname, address, city, telphone, email, bankaccount, bankname, accountid );
+		
+	END IF;
 
 END
 ;;
