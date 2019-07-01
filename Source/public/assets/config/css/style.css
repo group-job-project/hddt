@@ -375,10 +375,8 @@ body {
 .form-control-custom {
     display: block !important;
     width: 100% !important;
-    height: calc(2.25rem + 2px) !important;
-    padding: .375rem .75rem !important;
+    padding-left: 0.75rem !important;
     font-size: 1.8rem !important;
-    line-height: 1.5 !important;
     color: #495057 !important;
     background-color: #fff !important;
     background-clip: padding-box !important;

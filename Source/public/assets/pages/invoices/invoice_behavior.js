@@ -50,6 +50,8 @@ $("#btn_update_information").click(function (e) {
         bank_name: upd_bank_name
     };
 
+    invoice.validate(data);
+
     invoice.update_company_information(data);
 
 });

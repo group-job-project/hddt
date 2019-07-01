@@ -99,8 +99,11 @@ var invoice = {
         return invoice.dialog_func(dialog_message, 1000);
     },
 
-    validate: function() {
+    validate: function(data) {
+        var account_id = data.account_id;
+        if (account_id == "") {
 
+        }
     },
 
     /**
