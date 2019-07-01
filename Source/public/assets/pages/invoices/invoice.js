@@ -25,7 +25,7 @@ var invoice = {
                 }
                 catch (e) {
                     invoice.clear_form();
-                    invoice.error_message(taxcode, "find", invoice.title_error);
+                    invoice.message(taxcode, "find", invoice.title_error);
                 }
             }
         });
@@ -37,7 +37,7 @@ var invoice = {
             url: invoice.url,
             data:{'data': data},
             success:function(data) {
-                invoice.error_message(data, "update", invoice.title_info);
+                invoice.message(data, "update", invoice.title_info);
             }
         });
     },
@@ -82,7 +82,7 @@ var invoice = {
      * @param active
      * @param title
      */
-    error_message: function (content, active, title) {
+    message: function (content, active, title) {
 
         let dialog_message = $('<div class="dialog-message" style="color: red;" title="'+ title +'"></div>');
 
@@ -97,6 +97,10 @@ var invoice = {
         }
 
         return invoice.dialog_func(dialog_message, 1000);
+    },
+
+    validate: function() {
+
     },
 
     /**

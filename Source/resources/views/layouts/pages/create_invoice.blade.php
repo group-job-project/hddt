@@ -131,6 +131,6 @@
 	</div>
 @endsection
 @section("javascript")
-	<script type="text/javascript" src="{{ asset('assets/invoices/invoice.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/invoices/invoice_behavior.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/pages/invoices/invoice.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/pages/invoices/invoice_behavior.js') }}"></script>
 @endsection

@@ -12,7 +12,7 @@ $("#btn-find-by-tax-code").click(function(e) {
     var tax_code = $("#txt_tax_code").val();
 
     if (tax_code == "") {
-        invoice.error_message(tax_code, "find", invoice.title_error);
+        invoice.message(tax_code, "find", invoice.title_error);
         invoice.clear_form();
         return;
     }
