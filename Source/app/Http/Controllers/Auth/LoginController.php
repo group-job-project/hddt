@@ -62,6 +62,5 @@ class LoginController extends Controller
             return redirect()->intended('/');
         }
         return redirect()->back()->withErrors(['errorLogin'=>'Mã số thuế hoặc mật khẩu không chính xác.']);
-        // return redirect()->back()->withErrors(['password.error', 'Mã số thuế hoặc mật khẩu không chính xác.']);
     }
 }
