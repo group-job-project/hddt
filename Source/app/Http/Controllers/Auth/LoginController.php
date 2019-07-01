@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Http\Requests\AccountLogin;
 
 class LoginController extends Controller
 {
@@ -53,17 +54,14 @@ class LoginController extends Controller
         return view('auth.pages.login');
     }
 
-    public function postLogin(Request $request) {
-        if (Auth::guard('web')->attempt(['tax_code' => $request->taxcode, 'password' => $request->password])) {
-            echo "success";
-            return;
-            $details = Auth::guard('web')->user();
-            $user = $details['original'];
-            // return $user;
+    public function postLogin(AccountLogin $request) {
+        if (Auth::guard('member')->attempt(['tax_code' => $request->taxcode, 'password' => $request->password])) {
             return redirect()->intended('/');
         }
-        echo "ERROR";
-        return;
-        return redirect()->back()->WithErrors('ERROR');
+        else if (Auth::guard('guest')->attempt(['acc_mem_tax_code' => $request->taxcode, 'password' => $request->password])) {
+            return redirect()->intended('/');
+        }
+        return redirect()->back()->withErrors(['errorLogin'=>'Mã số thuế hoặc mật khẩu không chính xác.']);
+        // return redirect()->back()->withErrors(['password.error', 'Mã số thuế hoặc mật khẩu không chính xác.']);
     }
 }

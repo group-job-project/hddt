@@ -25,7 +25,7 @@
                                     <div class="form-group">
                                         <input id="taxcode" type="text" class="form-control form-control-lg @error('taxcode') is-invalid @enderror" name="taxcode" value="{{ old('taxcode') }}" required autocomplete="taxcode" autofocus placeholder="Mã số thuế...">
                                         @error('taxcode')
-                                        <span class="invalid-feedback" role="alert">
+                                            <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -33,10 +33,17 @@
                                     <div class="form-group">
                                         <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" required autocomplete="Mật khẩu" placeholder="Mật khẩu...">
                                         @error('password')
-                                        <span class="invalid-feedback" role="alert">
+                                            <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        @if ($errors->has('errorLogin'))
+                                            <span class="error-show" role="alert">
+                                                <strong>{{ $errors->first('errorLogin') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>

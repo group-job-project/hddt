@@ -1,5 +1,8 @@
 <?php
 
+use App\User;
+use App\Guest;
+
 return [
 
     /*
@@ -14,7 +17,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'member',
         'passwords' => 'accounts',
     ],
 
@@ -36,9 +39,14 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'member' => [
             'driver' => 'session',
             'provider' => 'accounts',
+        ],
+
+        'guest' => [
+            'driver' => 'session',
+            'provider' => 'account_member',
         ],
 
         'api' => [
@@ -70,6 +78,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'account_member' => [
+            'driver' => 'eloquent',
+            'model' => App\Guest::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -95,6 +107,11 @@ return [
     'passwords' => [
         'accounts' => [
             'provider' => 'accounts',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'account_member' => [
+            'provider' => 'account_member',
             'table' => 'password_resets',
             'expire' => 60,
         ],

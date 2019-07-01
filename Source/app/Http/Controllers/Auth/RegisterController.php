@@ -90,4 +90,24 @@ class RegisterController extends Controller
         );
         return redirect('dang-nhap');
     }
+
+    public function getRegisterGuest() {
+        return view('auth.pages.registerGuest');
+    }
+
+    public function postRegisterGuest(Request $request) {
+        DB::table('account_member')->insertGetId(
+            [
+                'acc_mem_name'=>$request->taxcode,
+                'acc_mem_tax_code'=>$request->taxcode,
+                'acc_id'=>110,
+                'status'=>0,
+                'email'=>'email@gmail.com',
+                'mobile_phone'=>'0941415514',
+                'created_date'=>Date::now(),
+                'acc_mem_password'=>Hash::make($request->password),
+            ]
+        );
+        return redirect('dang-nhap');
+    }
 }

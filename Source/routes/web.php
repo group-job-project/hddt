@@ -24,3 +24,7 @@ Route::post('/dang-nhap','Auth\LoginController@postLogin');
 Route::get('/dang-ky','Auth\RegisterController@getRegister');
 
 Route::post('/dang-ky','Auth\RegisterController@postRegister');
+
+Route::get('/dang-ky-khach','Auth\RegisterController@getRegisterGuest');
+
+Route::post('/dang-ky-khach','Auth\RegisterController@postRegisterGuest');
