@@ -1,0 +1,62 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 02, 2019 at 04:32 AM
+-- Server version: 10.1.40-MariaDB
+-- PHP Version: 7.3.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `thueso`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_token`
+--
+
+CREATE TABLE `user_token` (
+  `TOKEN_ID` int(11) NOT NULL,
+  `ACC_ID` int(11) DEFAULT NULL,
+  `VERSION` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SERIAL_NUMBER` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SIGNATURE_ALGORITHM` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SINGATURE_HASH_ALGORITHM` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ISSUER` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
+  `VALID_FROM` timestamp NULL DEFAULT NULL,
+  `VALID_TO` timestamp NULL DEFAULT NULL,
+  `SUBJECT` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `PUBLIC_KEY` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `AUTHORITY_KEY_IDENTIFIER` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `AUTHORITY_INFORMATION_ACCESS` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SUBJECT_ALTERNATIVE_NAME` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `CERTIFICATE_POLICIES` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ENHANCED_KEY_USAGE` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `CRL_DISTRIBUTION_POINTS` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SUBJECT_KEY_IDENTIFIER` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `BASIC_CONTRAINTS` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `KEY_USAGE` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `THUMBPRINT_ALGORITHM` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `THUMBPRINT` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `CREATED_DATE` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `UPDATED_DATE` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `DELETED_DATE` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
