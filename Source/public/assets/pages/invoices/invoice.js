@@ -9,12 +9,14 @@ var invoice = {
     url: "/thueso/Source/public/lap-hoa-don",
     title_info: "Thông báo",
     title_error: "Thông báo lỗi",
+    _find: "find",
+    _update: "update",
 
     /**
      * Push data to controller
      * @param name
      */
-    findByTaxCode: function(taxcode) {
+    findByTaxCode: function(taxcode, id) {
         $.ajax({
             type:'POST',
             url: invoice.url,
@@ -25,19 +27,23 @@ var invoice = {
                 }
                 catch (e) {
                     invoice.clear_form();
-                    invoice.message(taxcode, "find", invoice.title_error);
+                    invoice.message(taxcode, invoice._find, invoice.title_error, "red");
                 }
+                $(id).attr('disabled', false);
+                $(id).html("<i class='fas fa-search'></i> Truy xuất thông tin");
             }
         });
     },
 
-    update_company_information: function(data) {
+    update_company_information: function(data, id) {
         $.ajax({
             type:'PUT',
             url: invoice.url,
             data:{'data': data},
             success:function(data) {
-                invoice.message(data, "update", invoice.title_info);
+                invoice.message(data.id_tax, invoice._update, invoice.title_info, "#003b4d");
+                $(id).attr('disabled', false);
+                $(id).html("<i class='fas fa-save'></i> Cập nhật thông tin");
             }
         });
     },
@@ -82,28 +88,21 @@ var invoice = {
      * @param active
      * @param title
      */
-    message: function (content, active, title) {
+    message: function (content, active, title, color) {
 
-        let dialog_message = $('<div class="dialog-message" style="color: red;" title="'+ title +'"></div>');
+        let dialog_message = $('<div class="dialog-message" style="color: '+ color +'; font-weight: bold" title="'+ title +'"></div>');
 
-        if (content == "" && active == 'find') {
+        if (content == "" && active == invoice._find) {
             dialog_message.append("Vui lòng nhập mã số thuế.");
         }
-        if (content != "" && active == 'find') {
+        if (content != "" && active == invoice._find) {
             dialog_message.append("Mã số thuế ".concat(content, " không tìm thấy trong hệ thống. Hãy tiến hành thêm mới."));
         }
-        if (content != "" && active == 'update') {
-            dialog_message.append("Cập nhật thông tin thành công.");
+        if (content != "" && active == invoice._update) {
+            dialog_message.append("Cập nhật mã số thuế ".concat(content, " thành công."));
         }
 
         return invoice.dialog_func(dialog_message, 1000);
-    },
-
-    validate: function(data) {
-        var account_id = data.account_id;
-        if (account_id == "") {
-
-        }
     },
 
     /**
@@ -126,5 +125,28 @@ var invoice = {
                 }
             }
         });
-    }
+    },
+
+    /**
+     * Common dialog message
+     *
+     * @param dialog_message
+     * @param duration
+     */
+    dialog_func_focus:function (dialog_message, duration, id) {
+
+        dialog_message.dialog({
+            modal: true,
+            show: {
+                effect: "fade",
+                duration: duration
+            },
+            buttons: {
+                OK: function() {
+                    $( this ).dialog( "close" );
+                    $(id).focus();
+                }
+            }
+        });
+    },
 };

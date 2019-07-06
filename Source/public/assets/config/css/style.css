@@ -705,6 +705,9 @@ body {
         text-align: right;
         font-weight: bold;
     }
+    .size-button {
+        height: 100%;
+    }
 
 
 

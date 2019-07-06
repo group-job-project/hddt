@@ -71,6 +71,8 @@ class InvoiceController extends Controller
             $bankaccount,
             $bankname
             );
-        return response()->json(['success'=> "OK"]);
+
+        $response = ["status" => "OK", "id_tax" => $taxcode];
+        return response()->json($response);
     }
 }
