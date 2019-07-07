@@ -39,14 +39,14 @@
 								thuế <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-3">
-								<input type="text" autocomplete="off" class="form-control-plaintext"
+								<input type="text" maxlength="11" autocomplete="off" class="form-control-plaintext"
 									   id="view_tax_code">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-2 col-form-label">Người mua hàng</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control-plaintext"
+								<input type="text" class="form-control-plaintext" maxlength="150"
 									id="view_buyer_name" value="">
 							</div>
 						</div>
@@ -54,7 +54,7 @@
 							<label autocomplete="off" class="col-sm-2 col-form-label">Tên Doanh Nghiệp <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-9">
-								<input type="text"
+								<input type="text" maxlength="150"
 									class="form-control-plaintext" id="view_company_name"
 									value="">
 							</div>
@@ -63,7 +63,7 @@
 							<label class="col-sm-2 col-form-label">Địa chỉ <span style="color: red;">*</span>
 							</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control-plaintext"
+								<input type="text" maxlength="150" class="form-control-plaintext"
 									id="view_address"
 									value="">
 							</div>
@@ -87,21 +87,42 @@
 							</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control-plaintext"
-									id="view_telephone" />
+									id="view_telephone" maxlength="15"/>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Fax</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control-plaintext"
+									   id="view_fax" maxlength="15"/>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Di động</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control-plaintext"
+									   id="view_mobile" maxlength="11"/>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-2 col-form-label">Email</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control-plaintext"
-									id="view_email">
+									id="view_email" maxlength="50">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Webiste</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control-plaintext"
+									   id="view_website" maxlength="50">
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-2 col-form-label">Số TK Ngân Hàng</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control-plaintext"
-									id="view_account_bank">
+									id="view_account_bank" maxlength="25">
 							</div>
 						</div>
 
@@ -109,7 +130,14 @@
 							<label for="staticEmail" class="col-sm-2 col-form-label">Tên Ngân Hàng</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control-plaintext"
-									id="view_bank_name" value="">
+									id="view_bank_name" value="" maxlength="50">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="staticEmail" class="col-sm-2 col-form-label">Ghi chú</label>
+							<div class="col-sm-9">
+								<textarea type="are" class="form-control-plaintext"
+									   id="view_description" value="" rows="3" maxlength="300"></textarea>
 							</div>
 						</div>
 					</form>

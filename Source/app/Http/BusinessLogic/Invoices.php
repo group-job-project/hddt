@@ -37,11 +37,16 @@ class Invoices {
         $address,
         $city,
         $telphone,
+        $fax,
+        $mobile,
         $email,
+        $website,
         $bankaccount,
-        $bankname) {
+        $bankname,
+        $description
+        ) {
 
-        $updInfor = DB::select("CALL UPDATE_COMPANY_INFOMATION(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        $updInfor = DB::select("CALL UPDATE_COMPANY_INFOMATION(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             array(
                 $taxcode,
                 $accountid,
@@ -50,9 +55,13 @@ class Invoices {
                 $address,
                 $city,
                 $telphone,
+                $fax,
+                $mobile,
                 $email,
+                $website,
                 $bankaccount,
-                $bankname
+                $bankname,
+                $description
             ));
 
         return $updInfor;

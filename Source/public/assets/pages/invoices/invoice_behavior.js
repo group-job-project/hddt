@@ -44,9 +44,13 @@ $("#btn_update_information").click(function (e) {
     var upd_address = $("#view_address").val();
     var upd_city = $("#view_city").val();
     var upd_tel_phone = $("#view_telephone").val();
+    var upd_fax = $("#view_fax").val();
+    var upd_mobile = $("#view_mobile").val();
     var upd_email = $("#view_email").val();
+    var upd_website = $("#view_website").val();
     var upd_bank_account = $("#view_account_bank").val();
     var upd_bank_name = $("#view_bank_name").val();
+    var upd_description = $("#view_description").val();
 
     let dialog_message = $('<div class="dialog-message" style="color: red;" title="'+ invoice.title_info +'"></div>');
 
@@ -93,15 +97,48 @@ $("#btn_update_information").click(function (e) {
         address: upd_address,
         city: upd_city,
         tel_phone: upd_tel_phone,
+        fax: upd_fax,
+        mobile: upd_mobile,
         email: upd_email,
+        website: upd_website,
         bank_account: upd_bank_account,
-        bank_name: upd_bank_name
+        bank_name: upd_bank_name,
+        description: upd_description
     };
 
     var $this = $(this);
     $this.html("<i class='fas fa-stroopwafel fa-spin'></i> Đang xử lý");
     $this.attr('disabled', true);
+    $("#view_tax_code").attr('disabled', true);
+    $("#view_buyer_name").attr('disabled', true);
+    $("#view_company_name").attr('disabled', true);
+    $("#view_address").attr('disabled', true);
+    $("#view_city").attr('disabled', true);
+    $("#view_telephone").attr('disabled', true);
+    $("#view_fax").attr('disabled', true);
+    $("#view_mobile").attr('disabled', true);
+    $("#view_email").attr('disabled', true);
+    $("#view_website").attr('disabled', true);
+    $("#view_account_bank").attr('disabled', true);
+    $("#view_bank_name").attr('disabled', true);
+    $("#view_description").attr('disabled', true);
+
     setTimeout(function() {
+
+        $("#view_tax_code").attr('disabled', false);
+        $("#view_buyer_name").attr('disabled', false);
+        $("#view_company_name").attr('disabled', false);
+        $("#view_address").attr('disabled', false);
+        $("#view_city").attr('disabled', false);
+        $("#view_telephone").attr('disabled', false);
+        $("#view_fax").attr('disabled', false);
+        $("#view_mobile").attr('disabled', false);
+        $("#view_email").attr('disabled', false);
+        $("#view_website").attr('disabled', false);
+        $("#view_account_bank").attr('disabled', false);
+        $("#view_bank_name").attr('disabled', false);
+        $("#view_description").attr('disabled', false);
+
         invoice.update_company_information(data, "#btn_update_information");
     }, 5000);
 });

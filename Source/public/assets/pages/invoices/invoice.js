@@ -41,7 +41,18 @@ var invoice = {
             url: invoice.url,
             data:{'data': data},
             success:function(data) {
-                invoice.message(data.id_tax, invoice._update, invoice.title_info, "#003b4d");
+                try {
+                    invoice.message(data.id_tax, invoice._update, invoice.title_info, "#003b4d");
+                } catch (e){
+                    invoice.message(id, invoice._find, invoice.title_error, "red");
+                }
+                $(id).attr('disabled', false);
+                $(id).html("<i class='fas fa-save'></i> Cập nhật thông tin");
+            },
+            error: function (request, status, error) {
+                let dialog_message = $('<div class="dialog-message" style="color: red;" title="'+ invoice.title_info +'"></div>');
+                dialog_message.append("Cập nhật thông tin bị lỗi. Vui lòng kiểm tra lại");
+                invoice.dialog_func_focus(dialog_message, 1000, "#view_tax_code");
                 $(id).attr('disabled', false);
                 $(id).html("<i class='fas fa-save'></i> Cập nhật thông tin");
             }
@@ -60,10 +71,13 @@ var invoice = {
         $("#view_address").val(result.company_address);
         $("#view_city").val(result.company_city).change();
         $("#view_telephone").val(result.company_phone);
+        $("#view_fax").val(result.company_fax);
+        $("#view_mobile").val(result.company_mobile);
         $("#view_email").val(result.company_email);
+        $("#view_website").val(result.company_website);
         $("#view_account_bank").val(result.company_bank_account);
         $("#view_bank_name").val(result.company_bank_name);
-
+        $("#view_description").val(result.description);
     },
 
     /**
@@ -76,9 +90,12 @@ var invoice = {
         $("#view_address").val("");
         $("#view_city").val("-1").change();
         $("#view_telephone").val("");
+        $("#view_fax").val("");
+        $("#view_mobile").val("");
         $("#view_email").val("");
         $("#view_account_bank").val("");
         $("#view_bank_name").val("");
+        $("#view_description").val("");
     },
 
     /**
